@@ -6,7 +6,7 @@ import { IMachine } from './machine-interfaces';
 import { XMLLoaderService } from './xml-loader.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'bm-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
