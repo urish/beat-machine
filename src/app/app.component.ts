@@ -31,7 +31,7 @@ export class AppComponent {
   }
 
   beatIndex() {
-    const beatIndex = Math.round((0.5 + this.engine.getBeatIndex() % 8));
+    const beatIndex = this.engine.playing ? Math.round((0.5 + this.engine.getBeatIndex() % 8)) : 0;
     if (beatIndex !== this.lastBeatIndex) {
       setTimeout(() => {
         this.lastBeatIndex = beatIndex;

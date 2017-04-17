@@ -10,10 +10,12 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { XMLLoaderService } from './xml-loader.service';
 import { BeatEngineService } from './beat-engine.service';
+import { BeatIndicatorComponent } from './beat-indicator/beat-indicator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BeatIndicatorComponent,
   ],
   imports: [
     BrowserModule,

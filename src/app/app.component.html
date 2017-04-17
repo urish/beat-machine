@@ -9,12 +9,7 @@
   </button>
   <md-slider [(ngModel)]="machine.bpm" min="80" max="250" thumbLabel ></md-slider> {{machine.bpm}} BPM
   <div>
-    <span [hidden]="!engine.playing">
-      {{beatIndex()}}
-    </span>
-    <span [hidden]="engine.playing">
-      -
-    </span>
+    <bm-beat-indicator [index]="beatIndex()"></bm-beat-indicator>
   </div>
 
   <div>
