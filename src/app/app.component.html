@@ -3,7 +3,7 @@
 </h1>
 
 <div *ngIf="machine">
-  <button md-button (click)="togglePlay()">
+  <button md-button md-icon-button (click)="togglePlay()">
     <md-icon *ngIf="!engine.playing" aria-label="Play">play_arrow</md-icon>
     <md-icon *ngIf="engine.playing" aria-label="Stop">stop</md-icon>
   </button>
