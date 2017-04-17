@@ -22,6 +22,14 @@ export class AppComponent {
     });
   }
 
+  togglePlay() {
+    if (this.engine.playing) {
+      this.engine.stop();
+    } else {
+      this.engine.start();
+    }
+  }
+
   beatIndex() {
     const beatIndex = Math.round((0.5 + this.engine.getBeatIndex() % 8));
     if (beatIndex !== this.lastBeatIndex) {

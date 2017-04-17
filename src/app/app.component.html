@@ -3,11 +3,11 @@
 </h1>
 
 <div *ngIf="machine">
-  <input type="range" [(ngModel)]="machine.bpm" min="80" max="250" /> {{machine.bpm}} BPM
-  <div>
-    <button (click)="engine.start()">Play</button>
-    <button (click)="engine.stop()">Stop</button>
-  </div>
+  <button md-button (click)="togglePlay()">
+    <md-icon *ngIf="!engine.playing" aria-label="Play">play_arrow</md-icon>
+    <md-icon *ngIf="engine.playing" aria-label="Stop">stop</md-icon>
+  </button>
+  <md-slider [(ngModel)]="machine.bpm" min="80" max="250" thumbLabel ></md-slider> {{machine.bpm}} BPM
   <div>
     <span [hidden]="!engine.playing">
       {{beatIndex()}}
@@ -19,14 +19,14 @@
 
   <div>
     <div *ngFor="let instrument of machine?.instruments">
+      <md-checkbox [(ngModel)]="instrument.enabled"></md-checkbox>
       {{instrument.title}}
-      <input type="checkbox" [(ngModel)]="instrument.enabled"> {{instrument.activeProgram}}
-      <select [(ngModel)]="instrument.activeProgram">
-        <option *ngFor="let p of instrument.programs; let i = index" [value]="i">
+      <md-select [(ngModel)]="instrument.activeProgram">
+        <md-option *ngFor="let p of instrument.programs; let i = index" [value]="i">
           {{p.title}}
-        </option>
-      </select>
-      <input [(ngModel)]="instrument.volume" type="range" min="0" max="1.0" step="0.1" />
+        </md-option>
+      </md-select>
+      <md-slider [(ngModel)]="instrument.volume" min="0" max="1.0" step="0.1"></md-slider>
     </div>
   </div>
 </div>
