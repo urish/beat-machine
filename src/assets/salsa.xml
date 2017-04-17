@@ -1,0 +1,1271 @@
+﻿<bm:Machine xmlns="http://www.salsabeatmachine.org/xns/bm"
+			xmlns:bm="http://www.salsabeatmachine.org/xns/bm">
+	<!-- $Id: salsa.xml 7346 2012-01-06 00:16:47Z uri $ -->
+	
+	<bm:instrumentList>
+		<Clave xmlns="http://www.salsabeatmachine.org/xns/instruments"
+			   title="Clave">
+			<enabled>true</enabled>
+			<activeProgram>0</activeProgram>
+			<respectsClave>true</respectsClave>
+			<programs>
+				<bm:Program title="Son Clave" length='16'>
+					<bm:Note index='2' pitch='0' />
+					<bm:Note index='4' pitch='0' />
+					<bm:Note index='8' pitch='0' />
+					<bm:Note index='11' pitch='0' />
+					<bm:Note index='14' pitch='0' />
+				</bm:Program>
+				<bm:Program title="Rumba Clave" length='16'>
+					<bm:Note index='2' pitch='0' />
+					<bm:Note index='4' pitch='0' />
+					<bm:Note index='8' pitch='0' />
+					<bm:Note index='11' pitch='0' />
+					<bm:Note index='15' pitch='0' />
+				</bm:Program>
+			</programs>
+		</Clave>
+
+		<Cowbell xmlns="http://www.salsabeatmachine.org/xns/instruments"
+				 title="Cowbell">
+			<enabled>true</enabled>
+			<respectsClave>true</respectsClave> 
+			<activeProgram>0</activeProgram>
+			<programs>
+				<bm:Program title="Complex Cowbell" length='16'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='2' pitch='0' velocity='0.2' />
+					<bm:Note index='4' pitch='0' />
+					<bm:Note index='6' pitch='0' velocity='0.2' />
+					<bm:Note index='7' pitch='0' velocity='0.2' />
+					<bm:Note index='8' pitch='0' />
+					<bm:Note index='10' pitch='0' velocity='0.2' />
+					<bm:Note index='11' pitch='0' velocity='0.2' />
+					<bm:Note index='12' pitch='0' />
+					<bm:Note index='14' pitch='0' velocity='0.2' />
+					<bm:Note index='15' pitch='0' velocity='0.2' />
+				</bm:Program>
+				<bm:Program title="Simple Cowbell" length='16'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='4' pitch='0' />
+					<bm:Note index='8' pitch='0' />
+					<bm:Note index='12' pitch='0' />
+				</bm:Program>
+				<bm:Program length="4" title="Every Beat">
+					<bm:Note index="0" pitch="0" />
+					<bm:Note index="2" pitch="0" />
+				</bm:Program>
+			</programs>
+		</Cowbell>		
+		
+		<Congas xmlns="http://www.salsabeatmachine.org/xns/instruments"
+				title="Congas">
+			<enabled>true</enabled>
+			<activeProgram>1</activeProgram>
+			<respectsClave>true</respectsClave>
+			<programs>
+				<bm:Program title="Simple Tumbao" length='8'>
+					<bm:Note index='2' pitch='2' />
+					<bm:Note index='6' pitch='3' />
+					<bm:Note index='7' pitch='3' />
+				</bm:Program>
+				<bm:Program title="Tumbao" length='8'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='1' pitch='1' />
+					<bm:Note index='2' pitch='2' />
+					<bm:Note index='3' pitch='1' />
+					<bm:Note index='4' pitch='0' />
+					<bm:Note index='5' pitch='1' />
+					<bm:Note index='6' pitch='3' />
+					<bm:Note index='7' pitch='3' />
+				</bm:Program>
+				<bm:Program title="Tumbao 2 Congas" length='16'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='1' pitch='1' />
+					<bm:Note index='2' pitch='2' />
+					<bm:Note index='3' pitch='1' />
+					<bm:Note index='4' pitch='0' />
+					<bm:Note index='5' pitch='1' />
+					<bm:Note index='6' pitch='3' />
+					<bm:Note index='7' pitch='3' />
+					<bm:Note index='8' pitch='0' />
+					<bm:Note index='9' pitch='1' />
+					<bm:Note index='10' pitch='2' />
+					<bm:Note index='11' pitch='1' />
+					<bm:Note index='11' pitch='4' />
+					<bm:Note index='12' pitch='0' />
+					<bm:Note index='12' pitch='4' />
+					<bm:Note index='13' pitch='1' />
+					<bm:Note index='14' pitch='3' />
+					<bm:Note index='15' pitch='3' />
+				</bm:Program>
+				<bm:Program title="Simple Guaguancó" length='16'>
+					<bm:Note index='6' pitch='4' />
+					<bm:Note index='8' pitch='3' />
+					<bm:Note index='11' pitch='3' />
+					<bm:Note index='14' pitch='4' />
+				</bm:Program>
+				<bm:Program title="Guaguancó" length='16'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='1' pitch='1' />
+					<bm:Note index='2' pitch='1' />
+					<bm:Note index='3' pitch='2' />
+					<bm:Note index='6' pitch='4' />
+					<bm:Note index='8' pitch='3' />
+					<bm:Note index='11' pitch='3' />
+					<bm:Note index='14' pitch='4' />
+				</bm:Program>
+				<bm:Program title="Guaguancó with slaps" length='16'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='1' pitch='1' />
+					<bm:Note index='2' pitch='1' />
+					<bm:Note index='3' pitch='2' />
+					<bm:Note index='6' pitch='4' />
+					<bm:Note index='7' pitch='2' velocity="0.8" />
+					<bm:Note index='8' pitch='3' />
+					<bm:Note index='10' pitch='2' velocity="0.8" />
+					<bm:Note index='11' pitch='3' />
+					<bm:Note index='13' pitch='2' velocity="0.8" />
+					<bm:Note index='14' pitch='4' />
+				</bm:Program>
+				<bm:Program title="Cuban Guaguancó" length='16'>
+					<bm:Note index='8' pitch='0' />
+					<bm:Note index='9' pitch='1' />
+					<bm:Note index='10' pitch='1' />
+					<bm:Note index='11' pitch='2' />
+					<bm:Note index='14' pitch='4' />
+					<bm:Note index='0' pitch='3' />
+					<bm:Note index='3' pitch='3' />
+					<bm:Note index='6' pitch='4' />
+				</bm:Program>
+				<bm:Program title="Caballo" length="8">
+					<bm:Note index='0' pitch='2' />
+					<bm:Note index='1' pitch='1' />
+					<bm:Note index='2' pitch='1' />
+					<bm:Note index='3' pitch='0' />
+					<bm:Note index='4' pitch='2' />
+					<bm:Note index='5' pitch='1' />
+					<bm:Note index='6' pitch='3' />
+					<bm:Note index='7' pitch='0' />
+				</bm:Program>
+				<bm:Program title="Caballo 2 Congas" length="16">
+					<bm:Note index='0' pitch='2' />
+					<bm:Note index='1' pitch='1' />
+					<bm:Note index='2' pitch='1' />
+					<bm:Note index='3' pitch='0' />
+					<bm:Note index='4' pitch='2' />
+					<bm:Note index='5' pitch='1' />
+					<bm:Note index='6' pitch='3' />
+					<bm:Note index='7' pitch='0' />
+					<bm:Note index='8' pitch='3' />
+					<bm:Note index='9' pitch='3' />
+					<bm:Note index='10' pitch='1' />
+					<bm:Note index='11' pitch='1' />
+					<bm:Note index='12' pitch='2' />
+					<bm:Note index='13' pitch='1' />
+					<bm:Note index='14' pitch='4' />
+					<bm:Note index='15' pitch='1' />
+				</bm:Program>
+				<bm:Program title="Simple Tumbao Variation" length='16'>
+					<bm:Note index='2' pitch='2' />
+					<bm:Note index='6' pitch='3' />
+					<bm:Note index='7' pitch='3' />
+					<bm:Note index='10' pitch='2' />
+					<bm:Note index='14' pitch='3' />
+				</bm:Program>
+			</programs>
+		</Congas>
+
+		<Piano xmlns="http://www.salsabeatmachine.org/xns/instruments"
+			   title="Piano">
+			<enabled>true</enabled>
+			<volume>0.4</volume>
+			<activeProgram>1</activeProgram>
+			<playBothHands>true</playBothHands>
+			<pitchOffset>60</pitchOffset>
+			<leftHandPitchOffset>48</leftHandPitchOffset>
+			<keyedInstrument>true</keyedInstrument>
+			<programs>
+				<bm:Program title="Montuno I-IV-V-IV" length='16'>
+					<bm:Note index='0' pitch='0' pianoTonic="true" />
+					<bm:Note index='2' pitch='4' />
+					<bm:Note index='2' pitch='7' />
+					<bm:Note index='3' pitch='5' pianoTonic="true" />
+					<bm:Note index='5' pitch='9' />
+					<bm:Note index='5' pitch='12' />
+					<bm:Note index='7' pitch='7' pianoTonic="true" />
+					<bm:Note index='9' pitch='11' />
+					<bm:Note index='9' pitch='14' />
+					<bm:Note index='11' pitch='5' pianoTonic="true" />
+					<bm:Note index='13' pitch='9' />
+					<bm:Note index='13' pitch='12' />
+					<bm:Note index='15' pitch='0' pianoTonic="true" />
+				</bm:Program>
+
+				<bm:Program title="Montuno I-IV-V-IV + arpg. + passtone" length='32'>
+					<bm:Note index='0' pitch='0' pianoTonic="true" />
+					<bm:Note index='2' pitch='4' />
+					<bm:Note index='2' pitch='7' />
+					<bm:Note index='3' pitch='5' pianoTonic="true" />
+					<bm:Note index='5' pitch='9' />
+					<bm:Note index='5' pitch='12' />
+					<bm:Note index='7' pitch='7' pianoTonic="true" />
+					<bm:Note index='9' pitch='11' />
+					<bm:Note index='9' pitch='14' />
+					<bm:Note index='11' pitch='5' pianoTonic="true" />
+					<bm:Note index='13' pitch='9' />
+					<bm:Note index='13' pitch='12' />
+					<bm:Note index='15' pitch='0' pianoTonic="true" />
+					<bm:Note index='16' pitch='0' pianoTonic="true" />
+					<bm:Note index='17' pitch='4' />
+					<bm:Note index='18' pitch='7' />
+					<bm:Note index='19' pitch='5' pianoTonic="true" />
+					<bm:Note index='21' pitch='6' pianoTonic="true" />
+					<bm:Note index='23' pitch='7' pianoTonic="true" />
+					<bm:Note index='25' pitch='11' />
+					<bm:Note index='25' pitch='14' />
+					<bm:Note index='27' pitch='5' pianoTonic="true" />
+					<bm:Note index='29' pitch='9' />
+					<bm:Note index='29' pitch='12' />
+				</bm:Program>
+
+				<bm:Program title='Montuno "Abre que Voy"' length='32'>
+					<bm:Note index='0' pitch='0' pianoTonic="true" />
+					<bm:Note index='1' pitch='3' />
+					<bm:Note index='2' pitch='7' />
+					<bm:Note index='3' pitch='0' pianoTonic="true" />
+					<bm:Note index='5' pitch='-2' />
+					<bm:Note index='7' pitch='-4' pianoTonic="true" />
+					<bm:Note index='9' pitch='0'  />
+					<bm:Note index='10' pitch='3' />
+					<bm:Note index='11' pitch='-4' pianoTonic="true" />
+					<bm:Note index='12' pitch='-4' pianoTonic="true" />
+					<bm:Note index='13' pitch='0' />
+					<bm:Note index='14' pitch='3' />
+					<bm:Note index='15' pitch='-4' pianoTonic="true" />	        			
+					<bm:Note index='16' pitch='-2' pianoTonic="true" />
+					<bm:Note index='17' pitch='2' />
+					<bm:Note index='18' pitch='5' />
+					<bm:Note index='19' pitch='-2' pianoTonic="true" />
+					<bm:Note index='21' pitch='-2' pianoTonic="true" />
+					<bm:Note index='23' pitch='0' pianoTonic="true" />
+					<bm:Note index='25' pitch='3' />
+					<bm:Note index='26' pitch='7' />
+					<bm:Note index='27' pitch='0' pianoTonic="true"/>
+					<bm:Note index='28' pitch='0' pianoTonic="true" />
+					<bm:Note index='29' pitch='3' />
+					<bm:Note index='30' pitch='7' />
+					<bm:Note index='31' pitch='0' pianoTonic="true" />
+				</bm:Program>
+
+				<bm:Program title='Montuno from "Ain&apos;t Nobody" by Alex Wilson' length='32'>
+					<bm:Note index='0' pitch='7' pianoTonic="true" />
+					<bm:Note index='1' pitch='12' />
+					<bm:Note index='2' pitch='15' />
+					<bm:Note index='3' pitch='7' pianoTonic="true" />
+					<bm:Note index='4' pitch='7' pianoTonic="true" />
+					<bm:Note index='5' pitch='12' />
+					<bm:Note index='5' pitch='15' hand="right" />      			
+					<bm:Note index='6' pitch='15' hand="left" />
+					<bm:Note index='7' pitch='5' />
+					<bm:Note index='9' pitch='10' />
+					<bm:Note index='9' pitch='14' hand="right" />
+					<bm:Note index='9' pitch='5' hand="right" />
+					<bm:Note index='10' pitch='10' hand="left" />
+					<bm:Note index='11' pitch='5' pianoTonic="true" />
+					<bm:Note index='13' pitch='10' />
+					<bm:Note index='13' pitch='14' hand="right" />
+					<bm:Note index='14' pitch='5' pianoTonic="true" />
+					<bm:Note index='15' pitch='5' pianoTonic="true" />
+
+					<bm:Note index='16' pitch='5' pianoTonic="true" />
+					<bm:Note index='17' pitch='8' />
+					<bm:Note index='18' pitch='12' />
+					<bm:Note index='19' pitch='5' pianoTonic="true" />
+					<bm:Note index='20' pitch='5' pianoTonic="true" />
+					<bm:Note index='21' pitch='8' />
+					<bm:Note index='21' pitch='12' hand="left" />
+					<bm:Note index='22' pitch='12' hand="right" />
+					<bm:Note index='23' pitch='3' pianoTonic="true" />
+					<bm:Note index='25' pitch='3' hand="right" />
+					<bm:Note index='25' pitch='8' />
+					<bm:Note index='25' pitch='12' hand="right" />
+					<bm:Note index='26' pitch='12' hand="left" />
+					<bm:Note index='27' pitch='5' pianoTonic="true" />
+					<bm:Note index='29' pitch='14' hand="right" />
+					<bm:Note index='29' pitch='10' />	        			
+					<bm:Note index='30' pitch='7' pianoTonic="true" />
+					<bm:Note index='31' pitch='7' pianoTonic="true" />	        			
+				</bm:Program>
+
+				<bm:Program title='Montuno from "Nadie Como Ella"' length='16' tonicPitch='-12'>
+					<bm:Note index='15' pitch='7' pianoTonic="true" />
+					<bm:Note index='1' pitch='0' />
+					<bm:Note index='2' pitch='3' />
+					<bm:Note index='3' pitch='7' />
+					<bm:Note index='4' pitch='6' pianoTonic="true" />
+					<bm:Note index='5' pitch='0' velocity="0.5" />
+					<bm:Note index='6' pitch='3' />
+					<bm:Note index='7' pitch='7' pianoTonic="true" />
+					<bm:Note index='9' pitch='11' pianoTonic="true" />
+					<bm:Note index='10' pitch='2'  />
+					<bm:Note index='11' pitch='5' pianoTonic="true" />
+					<bm:Note index='13' pitch='2' />
+					<bm:Note index='14' pitch='7' pianoTonic="true" />
+				</bm:Program>
+
+				<bm:Program title='Tequila' length='32'>
+					<bm:Note index='0' pitch='2'  />
+					<bm:Note index='0' pitch='5' />
+					<bm:Note index='0' pitch='10' />
+					<bm:Note index='2' pitch='4' />
+					<bm:Note index='2' pitch='7' />
+					<bm:Note index='2' pitch='12' />
+					<bm:Note index='4' pitch='4' />
+					<bm:Note index='4' pitch='7' />
+					<bm:Note index='4' pitch='12' />
+					<bm:Note index='6' pitch='2'  />
+					<bm:Note index='6' pitch='5' />
+					<bm:Note index='6' pitch='10' />
+					<bm:Note index='7' pitch='2'  />
+					<bm:Note index='7' pitch='5' />
+					<bm:Note index='7' pitch='10' />
+					<bm:Note index='9' pitch='4' />
+					<bm:Note index='9' pitch='7' />
+					<bm:Note index='9' pitch='12' />
+					<bm:Note index='11' pitch='4' />
+					<bm:Note index='11' pitch='7' />
+					<bm:Note index='11' pitch='12' />
+					<bm:Note index='13' pitch='4' />
+					<bm:Note index='13' pitch='7' />
+					<bm:Note index='13' pitch='12' />
+					<bm:Note index='14' pitch='2'  />
+					<bm:Note index='14' pitch='5' />
+					<bm:Note index='14' pitch='10' />
+					<bm:Note index='15' pitch='2'  />
+					<bm:Note index='15' pitch='5' />
+					<bm:Note index='15' pitch='10' />
+					<bm:Note index='16' pitch='2'  />
+					<bm:Note index='16' pitch='5' />
+					<bm:Note index='16' pitch='10' />
+					<bm:Note index='18' pitch='4' />
+					<bm:Note index='18' pitch='7' />
+					<bm:Note index='18' pitch='12' />
+					<bm:Note index='20' pitch='4' />
+					<bm:Note index='20' pitch='7' />
+					<bm:Note index='20' pitch='12' />
+					<bm:Note index='22' pitch='2'  />
+					<bm:Note index='22' pitch='5' />
+					<bm:Note index='22' pitch='10' />
+					<bm:Note index='23' pitch='2'  />
+					<bm:Note index='23' pitch='5' />
+					<bm:Note index='23' pitch='10' />
+					<bm:Note index='25' pitch='4' />
+					<bm:Note index='25' pitch='7' />
+					<bm:Note index='25' pitch='12' />
+					<bm:Note index='27' pitch='2' />
+					<bm:Note index='27' pitch='5' />
+					<bm:Note index='27' pitch='10' />
+					<bm:Note index='29' pitch='2' />
+					<bm:Note index='29' pitch='5' />
+					<bm:Note index='29' pitch='10' />
+					<bm:Note index='30' pitch='2'  />
+					<bm:Note index='30' pitch='5' />
+					<bm:Note index='30' pitch='10' />
+					<bm:Note index='31' pitch='2'  />
+					<bm:Note index='31' pitch='5' />
+					<bm:Note index='31' pitch='10' />
+				</bm:Program>
+
+				<bm:Program title='Montuno by Kenneth' length='32'>
+					<bm:Note index='0' pitch='-3' pianoTonic="true" />
+					<bm:Note index='2' pitch='0' />
+					<bm:Note index='2' pitch='4' />
+					<bm:Note index='3' pitch='-5' pianoTonic="true" />
+					<bm:Note index='5' pitch='0' />
+					<bm:Note index='5' pitch='4' />
+					<bm:Note index='7' pitch='-6' pianoTonic="true" />
+					<bm:Note index='9' pitch='0' />
+					<bm:Note index='9' pitch='4' />
+					<bm:Note index='11' pitch='-5' pianoTonic="true" />
+					<bm:Note index='13' pitch='0' />
+					<bm:Note index='13' pitch='4' />
+					<bm:Note index='15' pitch='-4' pianoTonic="true" />
+					<bm:Note index='16' pitch='-3' pianoTonic="true" />
+					<bm:Note index='18' pitch='0' />
+					<bm:Note index='18' pitch='4' />
+					<bm:Note index='19' pitch='-5' pianoTonic="true" />
+					<bm:Note index='21' pitch='0' />
+					<bm:Note index='21' pitch='4' />
+					<bm:Note index='23' pitch='-6' pianoTonic="true" />
+					<bm:Note index='25' pitch='0' />
+					<bm:Note index='25' pitch='4' />
+					<bm:Note index='27' pitch='-5' pianoTonic="true" />
+					<bm:Note index='29' pitch='0' />
+					<bm:Note index='29' pitch='4' />
+				</bm:Program>
+
+				<bm:Program title="Montuno i-iv-V-iv" length='16'>
+					<bm:Note index='0' pitch='0' pianoTonic="true" />
+					<bm:Note index='2' pitch='3' />
+					<bm:Note index='2' pitch='7' />
+					<bm:Note index='3' pitch='5' pianoTonic="true" />
+					<bm:Note index='5' pitch='8' />
+					<bm:Note index='5' pitch='12' />
+					<bm:Note index='7' pitch='7' pianoTonic="true" />
+					<bm:Note index='9' pitch='11' />
+					<bm:Note index='9' pitch='14' />
+					<bm:Note index='11' pitch='5' pianoTonic="true" />
+					<bm:Note index='13' pitch='8' />
+					<bm:Note index='13' pitch='12' />
+					<bm:Note index='15' pitch='0' pianoTonic="true" />
+				</bm:Program>
+
+				<bm:Program title='Montuno from "Shula"' length='32'>
+					<bm:Note index='0' pitch='0' pianoTonic="true" />
+					<bm:Note index='2' pitch='3' />
+					<bm:Note index='3' pitch='-5' />
+					<bm:Note index='5' pitch='-2' />
+					<bm:Note index='7' pitch='0' pianoTonic="true" />
+					<bm:Note index='9' pitch='3' />
+					<bm:Note index='11' pitch='-5' />
+					<bm:Note index='12' pitch='0' pianoTonic="true" />
+					<bm:Note index='14' pitch='-1' pianoTonic="true" />
+					<bm:Note index='16' pitch='-2' pianoTonic="true" />
+					<bm:Note index='18' pitch='2' />
+					<bm:Note index='19' pitch='-7' />
+					<bm:Note index='21' pitch='-4' />
+					<bm:Note index='23' pitch='-2' pianoTonic="true" />
+					<bm:Note index='25' pitch='2' />
+					<bm:Note index='27' pitch='-7' />
+					<bm:Note index='28' pitch='-2' pianoTonic="true" />
+					<bm:Note index='30' pitch='-1' pianoTonic="true" />
+				</bm:Program>
+
+				<bm:Program title="Montuno 3" length='32'>
+					<bm:Note index='0' pitch='0' pianoTonic="true" />
+					<bm:Note index='2' pitch='3' />
+					<bm:Note index='2' pitch='7' />
+					<bm:Note index='3' pitch='-2' pianoTonic="true" />
+					<bm:Note index='5' pitch='3' />
+					<bm:Note index='5' pitch='7' />
+					<bm:Note index='7' pitch='0' pianoTonic="true" />
+					<bm:Note index='9' pitch='3' />
+					<bm:Note index='9' pitch='7' />
+					<bm:Note index='11' pitch='-2' pianoTonic="true" />
+					<bm:Note index='13' pitch='3' />
+					<bm:Note index='13' pitch='7' />
+					<bm:Note index='14' pitch='0' pianoTonic="true" />
+					<bm:Note index='15' pitch='-1' pianoTonic="true" />
+					<bm:Note index='16' pitch='-2' pianoTonic="true" />
+					<bm:Note index='18' pitch='2' />
+					<bm:Note index='18' pitch='5' />
+					<bm:Note index='19' pitch='-4' pianoTonic="true" />
+					<bm:Note index='21' pitch='2' />
+					<bm:Note index='21' pitch='5' />
+					<bm:Note index='23' pitch='-2' pianoTonic="true" />
+					<bm:Note index='25' pitch='2' />
+					<bm:Note index='25' pitch='5' />
+					<bm:Note index='27' pitch='-4' pianoTonic="true" />
+					<bm:Note index='29' pitch='2' />
+					<bm:Note index='29' pitch='5' />
+					<bm:Note index='30' pitch='-2' pianoTonic="true" />
+					<bm:Note index='31' pitch='-1' pianoTonic="true" />
+				</bm:Program>
+
+				<bm:Program title="Simple i-vi" length='16'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='0' pitch='3' />
+					<bm:Note index='0' pitch='7' />
+					<bm:Note index='2' pitch='0' />
+					<bm:Note index='2' pitch='3' />
+					<bm:Note index='2' pitch='7' />
+					<bm:Note index='5' pitch='0' />
+					<bm:Note index='5' pitch='3' />
+					<bm:Note index='5' pitch='7' />
+					<bm:Note index='7' pitch='0' />
+					<bm:Note index='7' pitch='5' />
+					<bm:Note index='7' pitch='8' />
+					<bm:Note index='11' pitch='0' />
+					<bm:Note index='11' pitch='5' />
+					<bm:Note index='11' pitch='8' />
+					<bm:Note index='15' pitch='0' />
+					<bm:Note index='15' pitch='5' />
+					<bm:Note index='15' pitch='8' />
+				</bm:Program>
+
+				<bm:Program title="Montuno I-V-V-I" length='16'>
+					<bm:Note index='0' pitch='0' pianoTonic="true" />
+					<bm:Note index='2' pitch='4' />
+					<bm:Note index='2' pitch='7' />
+					<bm:Note index='3' pitch='7' pianoTonic="true" />
+					<bm:Note index='5' pitch='11' />
+					<bm:Note index='5' pitch='14' />
+					<bm:Note index='7' pitch='7' pianoTonic="true" />
+					<bm:Note index='9' pitch='11' />
+					<bm:Note index='9' pitch='14' />
+					<bm:Note index='11' pitch='0' pianoTonic="true" />
+					<bm:Note index='13' pitch='4' />
+					<bm:Note index='13' pitch='7' />
+					<bm:Note index='15' pitch='0' pianoTonic="true" />
+				</bm:Program>
+
+				<bm:Program title="Montuno II-V-I-I" length='16'>
+					<bm:Note index='0' pitch='2' pianoTonic="true" />
+					<bm:Note index='2' pitch='6' />
+					<bm:Note index='2' pitch='9' />
+					<bm:Note index='3' pitch='7' pianoTonic="true" />
+					<bm:Note index='5' pitch='11' />
+					<bm:Note index='5' pitch='14' />
+					<bm:Note index='7' pitch='0' pianoTonic="true" />
+					<bm:Note index='9' pitch='4' />
+					<bm:Note index='9' pitch='7' />
+					<bm:Note index='11' pitch='0' pianoTonic="true" />
+					<bm:Note index='13' pitch='4' />
+					<bm:Note index='13' pitch='7' />
+					<bm:Note index='15' pitch='2' pianoTonic="true" />
+				</bm:Program>
+
+				<bm:Program title="Montuno i-IV-ii-V" length='16'>
+					<bm:Note index='0' pitch='0' pianoTonic="true" />
+					<bm:Note index='2' pitch='3' />
+					<bm:Note index='2' pitch='7' />
+					<bm:Note index='3' pitch='5' pianoTonic="true" />
+					<bm:Note index='5' pitch='9' />
+					<bm:Note index='5' pitch='12' />
+					<bm:Note index='7' pitch='2' pianoTonic="true" />
+					<bm:Note index='9' pitch='5' />
+					<bm:Note index='9' pitch='9' />
+					<bm:Note index='11' pitch='7' pianoTonic="true" />
+					<bm:Note index='13' pitch='11' />
+					<bm:Note index='13' pitch='14' />
+					<bm:Note index='15' pitch='0' pianoTonic="true" />
+				</bm:Program>
+
+				<bm:Program title="Montuno I-IV-V-IV Triads" length='16'>
+					<bm:Note index='0' pitch='7' hand="right" />
+					<bm:Note index='0' pitch='16' hand="right" />
+					<bm:Note index='2' pitch='12' hand="right" />
+					
+					<bm:Note index='3' pitch='5' hand="left" />
+					<bm:Note index='3' pitch='9' hand="right" />
+					<bm:Note index='3' pitch='17' hand="right" />
+					<bm:Note index='5' pitch='12' hand="right" />
+					
+					<bm:Note index='7' pitch='7' hand="left" />
+					<bm:Note index='7' pitch='11' hand="right" />
+					<bm:Note index='7' pitch='19' hand="right" />
+					<bm:Note index='9' pitch='14' hand="right" />
+					
+					<bm:Note index='11' pitch='5' hand="left" />
+					<bm:Note index='11' pitch='9' hand="right" />
+					<bm:Note index='11' pitch='17' hand="right" />
+					<bm:Note index='13' pitch='12' hand="right" />
+
+					<bm:Note index='14' pitch='0' hand="left" />
+					<bm:Note index='15' pitch='7' hand="right" />
+					<bm:Note index='15' pitch='16' hand="right" />
+				</bm:Program>
+				
+				<bm:Program title="El Preso - Intro" length='32'>
+					<bm:Note index='2' pitch='2' hand="right" pianoTonic="true" />
+					<bm:Note index='4' pitch='5' hand="right" pianoTonic="true" />
+					<bm:Note index='7' pitch='3' hand="right" pianoTonic="true" />
+					<bm:Note index='11' pitch='7' hand="right" pianoTonic="true" />
+					<bm:Note index='14' pitch='8' hand="right" pianoTonic="true" />
+
+					<bm:Note index='18' pitch='12' hand="right" pianoTonic="true" />					
+					<bm:Note index='20' pitch='8' hand="right" pianoTonic="true" />					
+					<bm:Note index='23' pitch='11' hand="right" pianoTonic="true" />					
+					<bm:Note index='27' pitch='5' hand="right" pianoTonic="true" />					
+					<bm:Note index='30' pitch='-1' hand="right" pianoTonic="true" />
+
+					<bm:Note index='2' pitch='-1' hand="left" />
+					<bm:Note index='4' pitch='2' hand="left" />
+					<bm:Note index='7' pitch='0' hand="left" />
+					<bm:Note index='11' pitch='3' hand="left" />
+					<bm:Note index='14' pitch='5' hand="left" />
+
+					<bm:Note index='18' pitch='8' hand="left" />					
+					<bm:Note index='20' pitch='5' hand="left" />					
+					<bm:Note index='23' pitch='7' hand="left" />					
+					<bm:Note index='27' pitch='2' hand="left" />					
+					<bm:Note index='30' pitch='-5' hand="left" />
+				</bm:Program>
+
+				<bm:Program title="El Preso - Montuno" length='32'>
+					<bm:Note index='2' pitch='2' hand="right" />
+					<bm:Note index='4' pitch='-1' hand="right" />
+					<bm:Note index='4' pitch='2' hand="right" />
+					<bm:Note index='4' pitch='7' hand="right" />
+					<bm:Note index='7' pitch='7' hand="right" />
+					<bm:Note index='9' pitch='0' hand="right" />
+					<bm:Note index='9' pitch='3' hand="right" />
+					<bm:Note index='11' pitch='0' hand="right" />
+					<bm:Note index='11' pitch='3' hand="right" />
+					<bm:Note index='11' pitch='7' hand="right" />
+					<bm:Note index='14' pitch='0' hand="right" />
+					<bm:Note index='14' pitch='5' hand="right" />
+					<bm:Note index='14' pitch='8' hand="right" />
+
+					<bm:Note index='18' pitch='0' hand="right" />
+					<bm:Note index='18' pitch='5' hand="right" />
+					<bm:Note index='18' pitch='12' hand="right" />					
+					<bm:Note index='20' pitch='0' hand="right" />
+					<bm:Note index='20' pitch='5' hand="right" />
+					<bm:Note index='20' pitch='8' hand="right" />					
+					<bm:Note index='23' pitch='2' hand="right" />					
+					<bm:Note index='23' pitch='11' hand="right" />					
+					<bm:Note index='27' pitch='2' hand="right" />					
+					<bm:Note index='30' pitch='-1' hand="right" />
+					<bm:Note index='30' pitch='2' hand="right" />
+					<bm:Note index='30' pitch='7' hand="right" />
+
+					<bm:Note index='2' pitch='-1' hand="left" />
+					<bm:Note index='4' pitch='2' hand="left" />
+					<bm:Note index='7' pitch='0' hand="left" />
+					<bm:Note index='11' pitch='3' hand="left" />
+					<bm:Note index='14' pitch='5' hand="left" />
+
+					<bm:Note index='18' pitch='8' hand="left" />					
+					<bm:Note index='20' pitch='5' hand="left" />					
+					<bm:Note index='23' pitch='7' hand="left" />					
+					<bm:Note index='27' pitch='2' hand="left" />					
+					<bm:Note index='30' pitch='-5' hand="left" />
+				</bm:Program>
+
+				<bm:Program title="El Preso - &quot;Piano Cáscara&quot;" length='32'>
+					<bm:Note index='0' pitch='11' />
+					<bm:Note index='0' pitch='14' />
+					<bm:Note index='0' pitch='19' />
+					<bm:Note index='2' pitch='11' />
+					<bm:Note index='2' pitch='14' />
+					<bm:Note index='2' pitch='19' />
+					<bm:Note index='4' pitch='11' />
+					<bm:Note index='4' pitch='14' />
+					<bm:Note index='4' pitch='19' />
+					<bm:Note index='5' pitch='11' />
+					<bm:Note index='5' pitch='14' />
+					<bm:Note index='5' pitch='19' />
+					<bm:Note index='7' pitch='12' />
+					<bm:Note index='7' pitch='15' />
+					<bm:Note index='7' pitch='19' />
+					<bm:Note index='9' pitch='12' />
+					<bm:Note index='9' pitch='15' />
+					<bm:Note index='9' pitch='19' />
+					<bm:Note index='10' pitch='12' />
+					<bm:Note index='10' pitch='15' />
+					<bm:Note index='10' pitch='19' />
+					<bm:Note index='12' pitch='12' />
+					<bm:Note index='12' pitch='15' />
+					<bm:Note index='12' pitch='19' />
+					<bm:Note index='13' pitch='12' />
+					<bm:Note index='13' pitch='15' />
+					<bm:Note index='13' pitch='19' />
+					<bm:Note index='15' pitch='17' velocity="0.5" />
+					<bm:Note index='16' pitch='12' />
+					<bm:Note index='16' pitch='17' />
+					<bm:Note index='16' pitch='20' />
+					<bm:Note index='17' pitch='12' />
+					<bm:Note index='17' pitch='17' />
+					<bm:Note index='17' pitch='20' />
+					<bm:Note index='18' pitch='12' />
+					<bm:Note index='18' pitch='17' />
+					<bm:Note index='18' pitch='20' />
+					<bm:Note index='20' pitch='12' />
+					<bm:Note index='20' pitch='17' />
+					<bm:Note index='20' pitch='20' />
+					<bm:Note index='21' pitch='12' />
+					<bm:Note index='21' pitch='17' />
+					<bm:Note index='21' pitch='20' />
+					<bm:Note index='23' pitch='11' />
+					<bm:Note index='23' pitch='14' />
+					<bm:Note index='23' pitch='19' />
+					<bm:Note index='25' pitch='11' />
+					<bm:Note index='25' pitch='14' />
+					<bm:Note index='25' pitch='19' />
+					<bm:Note index='26' pitch='11' />
+					<bm:Note index='26' pitch='14' />
+					<bm:Note index='26' pitch='19' />
+					<bm:Note index='28' pitch='11' />
+					<bm:Note index='28' pitch='14' />
+					<bm:Note index='28' pitch='19' />
+					<bm:Note index='29' pitch='11' />
+					<bm:Note index='29' pitch='14' />
+					<bm:Note index='29' pitch='19' />
+					<bm:Note index='31' pitch='11' />
+					<bm:Note index='31' pitch='14' />
+					<bm:Note index='31' pitch='19' />
+				</bm:Program>
+
+				<bm:Program title="Montuno I-V-V-I + Passing Tones" length='32'>
+					<bm:Note index='0' pitch='7' pianoTonic="true" />
+					<bm:Note index='2' pitch='12' />
+					<bm:Note index='2' pitch='16' />
+					<bm:Note index='3' pitch='9' pianoTonic="true" />
+					<bm:Note index='5' pitch='12' />
+					<bm:Note index='5' pitch='16' />
+					<bm:Note index='7' pitch='7' pianoTonic="true" />
+					<bm:Note index='9' pitch='11' />
+					<bm:Note index='9' pitch='14' />
+					<bm:Note index='11' pitch='5' pianoTonic="true" />
+					<bm:Note index='13' pitch='11' />
+					<bm:Note index='13' pitch='14' />
+					<bm:Note index='15' pitch='7' pianoTonic="true" />
+					<bm:Note index='16' pitch='7' pianoTonic="true" />
+					<bm:Note index='17' pitch='11' />
+					<bm:Note index='18' pitch='14' />
+					<bm:Note index='19' pitch='5' pianoTonic="true" />
+					<bm:Note index='21' pitch='11' />
+					<bm:Note index='21' pitch='14' />
+					<bm:Note index='23' pitch='7' pianoTonic="true" />
+					<bm:Note index='25' pitch='12' />
+					<bm:Note index='25' pitch='16' />
+					<bm:Note index='27' pitch='9' pianoTonic="true" />
+					<bm:Note index='29' pitch='12' />
+					<bm:Note index='29' pitch='16' />
+					<bm:Note index='31' pitch='9' pianoTonic="true" />
+				</bm:Program>
+
+				<bm:Program title="Montuno i-V-V-i (minor)" length='32'>
+					<bm:Note index='0' pitch='7' pianoTonic="true" />
+					<bm:Note index='2' pitch='12' />
+					<bm:Note index='2' pitch='15' />
+					<bm:Note index='3' pitch='8' pianoTonic="true" />
+					<bm:Note index='5' pitch='12' />
+					<bm:Note index='5' pitch='15' />
+					<bm:Note index='7' pitch='7' pianoTonic="true" />
+					<bm:Note index='9' pitch='11' />
+					<bm:Note index='9' pitch='14' />
+					<bm:Note index='11' pitch='5' pianoTonic="true" />
+					<bm:Note index='13' pitch='11' />
+					<bm:Note index='13' pitch='14' />
+					<bm:Note index='15' pitch='7' pianoTonic="true" />
+					<bm:Note index='16' pitch='7' pianoTonic="true" />
+					<bm:Note index='17' pitch='11' />
+					<bm:Note index='18' pitch='14' />
+					<bm:Note index='19' pitch='5' pianoTonic="true" />
+					<bm:Note index='21' pitch='11' />
+					<bm:Note index='21' pitch='14' />
+					<bm:Note index='23' pitch='7' pianoTonic="true" />
+					<bm:Note index='25' pitch='12' />
+					<bm:Note index='25' pitch='15' />
+					<bm:Note index='27' pitch='8' pianoTonic="true" />
+					<bm:Note index='29' pitch='12' />
+					<bm:Note index='29' pitch='15' />
+					<bm:Note index='31' pitch='8' pianoTonic="true" />
+				</bm:Program>
+
+				<bm:Program title="Montuno V-V-I-I" length='32'>
+					<bm:Note index='0' pitch='7' pianoTonic="true" />
+					<bm:Note index='1' pitch='11' />
+					<bm:Note index='2' pitch='14' />
+					<bm:Note index='3' pitch='5' pianoTonic="true" />
+					<bm:Note index='5' pitch='11' />
+					<bm:Note index='5' pitch='14' />
+					<bm:Note index='7' pitch='7' pianoTonic="true" />
+					<bm:Note index='9' pitch='11' />
+					<bm:Note index='9' pitch='14' />
+					<bm:Note index='11' pitch='5' pianoTonic="true" />
+					<bm:Note index='13' pitch='11' />
+					<bm:Note index='13' pitch='14' />
+					<bm:Note index='15' pitch='7' pianoTonic="true" />
+					<bm:Note index='16' pitch='7' pianoTonic="true" />
+					<bm:Note index='17' pitch='12' />
+					<bm:Note index='18' pitch='16' />
+					<bm:Note index='19' pitch='9' pianoTonic="true" />
+					<bm:Note index='21' pitch='12' />
+					<bm:Note index='21' pitch='16' />
+					<bm:Note index='23' pitch='7' pianoTonic="true" />
+					<bm:Note index='25' pitch='12' />
+					<bm:Note index='25' pitch='16' />
+					<bm:Note index='27' pitch='9' pianoTonic="true" />
+					<bm:Note index='29' pitch='12' />
+					<bm:Note index='29' pitch='16' />
+					<bm:Note index='31' pitch='9' pianoTonic="true" />
+				</bm:Program>
+			</programs>
+		</Piano>
+
+		<Instructor xmlns="http://www.salsabeatmachine.org/xns/instruments"
+					title="Instructor">
+			<enabled>true</enabled>
+			<activeProgram>1</activeProgram>
+			<programs>
+				<bm:Program title="1" length='16'>
+					<bm:Note index='0' pitch='0' />
+				</bm:Program>
+				<bm:Program title="1,5" length='16'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='8' pitch='4' />
+				</bm:Program>
+				<bm:Program title="1,2,3,5,6,7" length='16'>
+					<bm:Note index='0'  pitch='0' />
+					<bm:Note index='2'  pitch='1' />
+					<bm:Note index='4'  pitch='2' />
+					<bm:Note index='8'  pitch='4' />
+					<bm:Note index='10' pitch='5' />
+					<bm:Note index='12' pitch='6' />
+				</bm:Program>
+				<bm:Program title="1,3,5,7" length='16'>
+					<bm:Note index='0'  pitch='0' />
+					<bm:Note index='4'  pitch='2' />
+					<bm:Note index='8'  pitch='4' />
+					<bm:Note index='12' pitch='6' />
+				</bm:Program>
+				<bm:Program title="2,6" length='16'>
+					<bm:Note index='2'  pitch='1' />
+					<bm:Note index='10' pitch='5' />
+				</bm:Program>
+				<bm:Program title="2,3,6,7" length='16'>
+					<bm:Note index='2'  pitch='1' />
+					<bm:Note index='4'  pitch='2' />
+					<bm:Note index='10' pitch='5' />
+					<bm:Note index='12' pitch='6' />
+				</bm:Program>
+				<bm:Program title="4,8" length='16'>
+					<bm:Note index='6'  pitch='3' />
+					<bm:Note index='14' pitch='7' />
+				</bm:Program>
+				<bm:Program title="2,4,6,8" length='16'>
+					<bm:Note index='2'  pitch='1' />
+					<bm:Note index='6'  pitch='3' />
+					<bm:Note index='10' pitch='5' />
+					<bm:Note index='14' pitch='7' />
+				</bm:Program>
+				<bm:Program title="2,3,4,6,7,8" length='16'>
+					<bm:Note index='2'  pitch='1' />
+					<bm:Note index='4'  pitch='2' />
+					<bm:Note index='6'  pitch='3' />
+					<bm:Note index='10' pitch='5' />
+					<bm:Note index='12' pitch='6' />
+					<bm:Note index='14' pitch='7' />
+				</bm:Program>
+				<bm:Program title="1,2,3,4,5,6,7,8" length='16'>
+					<bm:Note index='0'  pitch='0' />
+					<bm:Note index='2'  pitch='1' />
+					<bm:Note index='4'  pitch='2' />
+					<bm:Note index='6'  pitch='3' />
+					<bm:Note index='8'  pitch='4' />
+					<bm:Note index='10' pitch='5' />
+					<bm:Note index='12' pitch='6' />
+					<bm:Note index='14' pitch='7' />
+				</bm:Program>
+			</programs>
+		</Instructor>
+		
+		<!--
+		<Clap xmlns="http://www.salsabeatmachine.org/xns/instruments"
+					title="Hands Clap">
+			<comment>http://www.freesound.org/samplesViewSingle.php?id=3718</comment>
+			<enabled>true</enabled>
+			<visible>false</visible>
+			<respectsClave>true</respectsClave>
+			<programs>
+				<bm:Program title="Clap 1,5" length='16'>
+					<bm:Note index='0' pitch='clap' />
+					<bm:Note index='8' pitch='clap' />
+				</bm:Program>
+				<bm:Program title="Clap 2,6" length='16'>
+					<bm:Note index='2' pitch='clap' />
+					<bm:Note index='10' pitch='clap' />
+				</bm:Program>
+				<bm:Program title="Down-Beats" length='16'>
+					<bm:Note index='0' pitch='clap' />
+					<bm:Note index='4' pitch='clap' />
+					<bm:Note index='8' pitch='clap' />
+					<bm:Note index='12' pitch='clap' />
+				</bm:Program>
+				<bm:Program title="Up-Beats" length='16'>
+					<bm:Note index='2' pitch='clap' />
+					<bm:Note index='6' pitch='clap' />
+					<bm:Note index='10' pitch='clap' />
+					<bm:Note index='14' pitch='clap' />
+				</bm:Program>
+				<bm:Program title="Son Clave" length='16'>
+					<bm:Note index='2' pitch='0' />
+					<bm:Note index='4' pitch='0' />
+					<bm:Note index='8' pitch='0' />
+					<bm:Note index='11' pitch='0' />
+					<bm:Note index='14' pitch='0' />
+				</bm:Program>
+				<bm:Program title="Rumba Clave" length='16'>
+					<bm:Note index='2' pitch='0' />
+					<bm:Note index='4' pitch='0' />
+					<bm:Note index='8' pitch='0' />
+					<bm:Note index='11' pitch='0' />
+					<bm:Note index='15' pitch='0' />
+				</bm:Program>
+			</programs>
+		</Clap>
+		-->
+				
+		<Bass xmlns="http://www.salsabeatmachine.org/xns/instruments"
+			  title="Bass">
+			<enabled>true</enabled>
+			<activeProgram>0</activeProgram>
+			<pitchOffset>36</pitchOffset>
+			<keyedInstrument>true</keyedInstrument>
+			<programs>
+				<bm:Program title="Tumbao I-IV-V-IV" length='16'>
+					<bm:Note index='3' pitch='5' length='2' />
+					<bm:Note index='6' pitch='7' length='4' />
+					<bm:Note index='11' pitch='5' length='2' />
+					<bm:Note index='14' pitch='0' length='4 '/>
+				</bm:Program>
+				<bm:Program title="Tumbao 5-8-5-1" length='16'>
+					<bm:Note index='3' pitch='7' length='2' />
+					<bm:Note index='6' pitch='12' length='4' />
+					<bm:Note index='11' pitch='7' length='2' />
+					<bm:Note index='14' pitch='0' length='4 '/>
+				</bm:Program>
+				<bm:Program title="Tumbao+ 1-5-1-5-8" length='16'>
+					<bm:Note index='0' pitch='0' length='2' />
+					<bm:Note index='3' pitch='7' length='2' />
+					<bm:Note index='6' pitch='0' length='4' />
+					<bm:Note index='11' pitch='7' length='2' />
+					<bm:Note index='14' pitch='12' length='2 '/>
+				</bm:Program>
+				<bm:Program title="Tumbao+ 1-5-8-5-1" length='16'>
+					<bm:Note index='0' pitch='0' length='2' />
+					<bm:Note index='3' pitch='7' length='2' />
+					<bm:Note index='6' pitch='12' length='4' />
+					<bm:Note index='11' pitch='7' length='2' />
+					<bm:Note index='14' pitch='0' length='2 '/>
+				</bm:Program>
+				<bm:Program title="Tumbao+ 5-5-1-5-8" length='16'>
+					<bm:Note index='0' pitch='7' length='2' />
+					<bm:Note index='3' pitch='7' length='2' />
+					<bm:Note index='6' pitch='0' length='4' />
+					<bm:Note index='11' pitch='7' length='2' />
+					<bm:Note index='14' pitch='12' length='2 '/>
+				</bm:Program>
+				<bm:Program title="Tumbao+ 1-5-1-5-1" length='16'>
+					<bm:Note index='0' pitch='0' length='2' />
+					<bm:Note index='3' pitch='7' length='2' />
+					<bm:Note index='6' pitch='0' length='4' />
+					<bm:Note index='11' pitch='7' length='2' />
+					<bm:Note index='14' pitch='0' length='2 '/>
+				</bm:Program>
+				<bm:Program title="Mambo 1-5-8" length='8'>
+					<bm:Note index='0' pitch='0' length='2' />
+					<bm:Note index='3' pitch='7' length='2' />
+					<bm:Note index='6' pitch='12' length='4' />
+				</bm:Program>
+				<bm:Program title="Bass from &quot;Aint Nobody&quot; by Alex Wilson" length='32'>
+					<bm:Note index='3' pitch='7' length='3' />
+					<bm:Note index='6' pitch='0' length='1' />
+					<bm:Note index='8' pitch='2' length='2' />
+					<bm:Note index='11' pitch='3' length='2' />
+					<bm:Note index='14' pitch='5' length='3' />
+					<bm:Note index='19' pitch='0' length='1' />
+					<bm:Note index='20' pitch='5' length='2' />
+					<bm:Note index='24' pitch='8' length='2' />
+					<bm:Note index='27' pitch='10' length='2' />
+					<bm:Note index='30' pitch='0' length='4' />
+				</bm:Program>
+				<bm:Program title="El Preso - Bassline" length='32'>
+					<bm:Note index='2' pitch='-1' hand="left" />
+					<bm:Note index='4' pitch='2' hand="left" />
+					<bm:Note index='7' pitch='0' hand="left" />
+					<bm:Note index='11' pitch='3' hand="left" />
+					<bm:Note index='14' pitch='5' hand="left" />
+					<bm:Note index='18' pitch='8' hand="left" />					
+					<bm:Note index='20' pitch='5' hand="left" />					
+					<bm:Note index='23' pitch='7' hand="left" />					
+					<bm:Note index='27' pitch='2' hand="left" />					
+					<bm:Note index='30' pitch='-5' hand="left" />
+				</bm:Program>				
+				<bm:Program title="Guaguancó 8-8-1-5" length='16'>
+					<bm:Note index='6' pitch='7' length='1' />
+					<bm:Note index='8' pitch='12' length='2' />
+					<bm:Note index='11' pitch='12' length='2' />
+					<bm:Note index='14' pitch='0' length='6' />
+				</bm:Program>
+				<bm:Program title="Cuban Guaguancó" length='16'>
+					<bm:Note index='14' pitch='7' length='1' />
+					<bm:Note index='0' pitch='12' length='2' />
+					<bm:Note index='3' pitch='12' length='2' />
+					<bm:Note index='6' pitch='0' length='6' />
+				</bm:Program>
+			</programs>
+		</Bass>
+
+		<Timbales xmlns="http://www.salsabeatmachine.org/xns/instruments"
+				  title="Timbales">
+			<enabled>true</enabled>
+			<respectsClave>true</respectsClave> 
+			<activeProgram>0</activeProgram>
+			<programs>
+				<bm:Program title="Cáscara" length='16'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='2' pitch='0' />
+					<bm:Note index='4' pitch='0' />
+					<bm:Note index='5' pitch='0' />
+					<bm:Note index='7' pitch='0' />
+					<bm:Note index='8' pitch='0' />
+					<bm:Note index='10' pitch='0' />
+					<bm:Note index='11' pitch='0' />
+					<bm:Note index='13' pitch='0' />
+					<bm:Note index='15' pitch='0' />
+				</bm:Program>
+				<bm:Program title="Cáscara Accents" length='16'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='2' pitch='0' />
+					<bm:Note index='5' pitch='0' />
+					<bm:Note index='8' pitch='0' />
+					<bm:Note index='11' pitch='0' />
+					<bm:Note index='13' pitch='0' />
+				</bm:Program>
+				<bm:Program title="Cáscara Mambo" length='16'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='2' pitch='0' />
+					<bm:Note index='4' pitch='0' velocity='0.4' />
+					<bm:Note index='5' pitch='0' velocity='0.4' />
+					<bm:Note index='6' pitch='0' />
+					<bm:Note index='7' pitch='0' />
+					<bm:Note index='9' pitch='0' velocity='0.4' />
+					<bm:Note index='10' pitch='0' velocity='0.4' />
+					<bm:Note index='11' pitch='0' />
+					<bm:Note index='12' pitch='0' />
+					<bm:Note index='14' pitch='0' velocity='0.4' />
+					<bm:Note index='15' pitch='0' velocity='0.4' />
+				</bm:Program>
+				<bm:Program title="Mambo Bell (Contra Campana)" length='16'>
+					<bm:Note index='0' pitch='1' />
+					<bm:Note index='2' pitch='1' />
+					<bm:Note index='4' pitch='1' velocity='0.4' />
+					<bm:Note index='5' pitch='1' velocity='0.4' />
+					<bm:Note index='6' pitch='1' />
+					<bm:Note index='7' pitch='1' />
+					<bm:Note index='9' pitch='1' velocity='0.4' />
+					<bm:Note index='10' pitch='1' velocity='0.4' />
+					<bm:Note index='11' pitch='1' />
+					<bm:Note index='12' pitch='1' />
+					<bm:Note index='14' pitch='1' velocity='0.4' />
+					<bm:Note index='15' pitch='1' velocity='0.4' />
+				</bm:Program>
+			</programs>
+		</Timbales>
+		
+		<Guiro  xmlns="http://www.salsabeatmachine.org/xns/instruments"
+				title="Güiro">
+			<enabled>true</enabled>
+			<activeProgram>0</activeProgram>
+			<respectsClave>true</respectsClave>
+			<programs>
+				<bm:Program title="Güiro" length='4'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='2' pitch='1' />
+					<bm:Note index='3' pitch='1' />
+				</bm:Program>
+				<bm:Program length="16" title="Güiro Danzón">
+					<bm:Note index="0" pitch="0" />
+					<bm:Note index="2" pitch="1" />
+					<bm:Note index="3" pitch="1" />
+					<bm:Note index="5" pitch="1" />
+					<bm:Note index="6" pitch="0" />
+					<bm:Note index="10" pitch="0" />
+					<bm:Note index="12" pitch="0" />
+					<bm:Note index="14" pitch="0" />
+				</bm:Program>
+			</programs>
+			
+		</Guiro>
+		
+		<Bongos xmlns="http://www.salsabeatmachine.org/xns/instruments"
+				title="Bongos">
+			<enabled>false</enabled>
+			<activeProgram>0</activeProgram>
+			<respectsClave>true</respectsClave>
+			<programs>
+				<bm:Program title="Martillo" length='8'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='1' pitch='1' />
+					<bm:Note index='2' pitch='3' />
+					<bm:Note index='3' pitch='1' />
+					<bm:Note index='4' pitch='0' />
+					<bm:Note index='5' pitch='1' />
+					<bm:Note index='6' pitch='2' />
+					<bm:Note index='7' pitch='1' />
+				</bm:Program>
+				<bm:Program length="16" title="Martillo Var1">
+					<bm:Note index="0" pitch="0" />
+					<bm:Note index="1" pitch="1" />
+					<bm:Note index="2" pitch="3" />
+					<bm:Note index="3" pitch="1" />
+					<bm:Note index="4" pitch="0" />
+					<bm:Note index="5" pitch="1" />
+					<bm:Note index="6" pitch="2" />
+					<bm:Note index="7" pitch="3" />
+			
+					<bm:Note index="9" pitch="1" />
+					<bm:Note index="10" pitch="3" />
+					<bm:Note index="11" pitch="1" />
+					<bm:Note index="12" pitch="0" />
+					<bm:Note index="13" pitch="1" />
+					<bm:Note index="14" pitch="2" />
+					<bm:Note index="15" pitch="1" />
+				</bm:Program>
+				<bm:Program length="16" title="Martillo Var2">
+					<bm:Note index="0" pitch="0" />
+					<bm:Note index="1" pitch="1" />
+					<bm:Note index="2" pitch="3" />
+					<bm:Note index="3" pitch="1" />
+					<bm:Note index="4" pitch="0" />
+					<bm:Note index="5" pitch="1" />
+					<bm:Note index="6" pitch="2" />
+					<bm:Note index="7" pitch="3" />
+					<bm:Note index="8" pitch="2" />
+					<bm:Note index="9" pitch="1" />
+					<bm:Note index="10" pitch="3" />
+					<bm:Note index="11" pitch="1" />
+					<bm:Note index="12" pitch="0" />
+					<bm:Note index="13" pitch="1" />
+					<bm:Note index="14" pitch="2" />
+					<bm:Note index="15" pitch="1" />
+				</bm:Program>				
+				<bm:Program length="16" title="Martillo para clave">
+					<bm:Note index="0" pitch="4" />
+					<bm:Note index="1" pitch="1" />
+					<bm:Note index="2" pitch="3" />
+					<bm:Note index="3" pitch="1" />
+			
+					<bm:Note index="4" pitch="3" />
+					<bm:Note index="5" pitch="0" />
+					<bm:Note index="6" pitch="2" />
+					<bm:Note index="7" pitch="1" />
+			
+					<bm:Note index="8" pitch="3" />
+					<bm:Note index="9" pitch="1" />
+					<bm:Note index="10" pitch="3" />
+					<bm:Note index="11" pitch="1" />
+			
+					<bm:Note index="12" pitch="3" />
+					<bm:Note index="13" pitch="1" />
+					<bm:Note index="14" pitch="2" />
+					<bm:Note index="15" pitch="0" />
+				</bm:Program>
+			</programs>
+		</Bongos>
+		
+		<Maracas xmlns="http://www.salsabeatmachine.org/xns/instruments"
+				 title="Maracas">
+			<enabled>false</enabled>
+			<volume>0.2</volume>
+			<activeProgram>0</activeProgram>
+			<programs>
+				<bm:Program title="Maracas" length='2'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='1' pitch='1' />
+				</bm:Program>
+				<bm:Program length="4" title="Maracas Son">
+					<bm:Note index="0" pitch="0" />
+					<bm:Note index="2" pitch="0" />
+					<bm:Note index="3" pitch="1" />
+				</bm:Program>
+				<bm:Program length="8" title="Maracas Son Montuno">
+					<bm:Note index="0" pitch="0" />
+					<bm:Note index="2" pitch="0" />
+					<bm:Note index="3" pitch="1" />
+					<bm:Note index="4" pitch="0" />
+					<bm:Note index="6" pitch="1" />
+				</bm:Program>
+				<bm:Program length="8" title="Maracas Son Montuno 2">
+					<bm:Note index="0" pitch="0" />
+					<bm:Note index="2" pitch="0" />
+					<bm:Note index="3" pitch="1" />
+			
+					<bm:Note index="4" pitch="0" />
+					<bm:Note index="5" pitch="1" />
+					<bm:Note index="6" pitch="0" />
+					<bm:Note index="7" pitch="1" />
+				</bm:Program>				
+			</programs>
+		</Maracas>
+				
+		<!--
+		<Trumpet xmlns="http://www.salsabeatmachine.org/xns/instruments"
+				 title="Trumpet">
+			<enabled>true</enabled>
+			<activeProgram>1</activeProgram>
+			<pitchOffset>60</pitchOffset>
+			<programs>
+				<bm:Program title="Down &amp; Up" length='16'>
+					<bm:Note index='2' pitch='8' length='1' />
+					<bm:Note index='3' pitch='5' length='1' />
+					<bm:Note index='4' pitch='3' length='1' />
+					<bm:Note index='5' pitch='2' length='1'/>
+					<bm:Note index='6' pitch='3' length='1' />
+					<bm:Note index='7' pitch='5' length='1'/>
+					<bm:Note index='8' pitch='7' length='4'/>
+				</bm:Program>
+				<bm:Program title="Montuno 1" length='32'>
+					<bm:Note index='0' pitch='0' length='2' />
+					<bm:Note index='2' pitch='4' length='1' />
+					<bm:Note index='2' pitch='7' length='1' />
+					<bm:Note index='3' pitch='5' length='1' />
+					<bm:Note index='5' pitch='9' length='1' />
+					<bm:Note index='5' pitch='12' length='1' />
+					<bm:Note index='7' pitch='7' length='1' />
+					<bm:Note index='9' pitch='11' length='1' />
+					<bm:Note index='9' pitch='14' length='1' />
+					<bm:Note index='11' pitch='5' length='1' />
+					<bm:Note index='13' pitch='9' length='1' />
+					<bm:Note index='13' pitch='12' length='1' />
+					<bm:Note index='15' pitch='0' length='1' />
+					<bm:Note index='16' pitch='0' length='2' />
+					<bm:Note index='18' pitch='4' length='1' />
+					<bm:Note index='18' pitch='7' length='1' />
+					<bm:Note index='19' pitch='5' length='1' />
+					<bm:Note index='21' pitch='9' length='1' />
+					<bm:Note index='21' pitch='12' length='1' />
+					<bm:Note index='23' pitch='7' length='1' />
+					<bm:Note index='25' pitch='11' length='1' />
+					<bm:Note index='25' pitch='14' length='1' />
+					<bm:Note index='27' pitch='5' length='1' />
+					<bm:Note index='29' pitch='9' length='1' />
+					<bm:Note index='29' pitch='12' length='1' />
+				</bm:Program>
+				<bm:Program title="Break 1" length='16'>
+					<bm:Note index='0' pitch='12' length='1' />
+					<bm:Note index='1' pitch='12' length='1' />
+					<bm:Note index='2' pitch='12' length='1' />
+					<bm:Note index='3' pitch='12' length='1' />
+					<bm:Note index='4' pitch='12' length='1'/>
+					<bm:Note index='6' pitch='12' length='1' />
+					<bm:Note index='7' pitch='12' length='1' />
+					<bm:Note index='8' pitch='12' length='1' />
+					<bm:Note index='9' pitch='12' length='1' />
+					<bm:Note index='10' pitch='12' length='1'/>
+				</bm:Program>
+				<bm:Program title="Timber" length='16'>
+					<bm:Note index='1' pitch='4' length='2' />
+					<bm:Note index='3' pitch='4' length='2' />
+					<bm:Note index='5' pitch='4' length='1' />
+					<bm:Note index='6' pitch='4' length='2' />
+					<bm:Note index='8' pitch='8' length='2'/>
+					<bm:Note index='11' pitch='8' length='1'/>
+					<bm:Note index='12' pitch='12' length='3'/>
+				</bm:Program>
+			</programs>
+		</Trumpet>
+		-->
+	</bm:instrumentList>
+	
+	<bm:machineId>SALSA-DEFAULT</bm:machineId>
+	<bm:title></bm:title>
+	<bm:author></bm:author>
+	<bm:timeCreated></bm:timeCreated>
+	<bm:description></bm:description>
+	<bm:parentMachine></bm:parentMachine>
+	<bm:flavor>Salsa</bm:flavor>
+	<bm:bpm>180</bm:bpm>
+	<bm:machineVersion>2</bm:machineVersion>
+	<bm:enabled>false</bm:enabled>
+	<bm:clave32>false</bm:clave32>
+	<bm:volume>0.5</bm:volume>
+	<bm:keyNote>0</bm:keyNote>
+	<bm:autoControlEnabled>true</bm:autoControlEnabled>
+	<bm:autoControlInterval>32</bm:autoControlInterval>
+</bm:Machine>
