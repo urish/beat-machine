@@ -12,7 +12,7 @@ class PropertyWatcher<T> {
       get: () => this.value,
       set: newValue => {
         this.value = newValue;
-        this.watchers.forEach(watcher => watcher(newValue))
+        this.watchers.forEach(watcher => watcher(newValue));
       }
     });
   }
