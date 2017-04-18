@@ -49,7 +49,6 @@ export class InstrumentPlayer {
 
     new PropertyWatcher(instrument, 'enabled').register(enabled => {
       if (enabled) {
-        this.reset();
         this.onChange.next();
       } else {
         this.gain.gain.value = 0;
@@ -57,7 +56,6 @@ export class InstrumentPlayer {
     });
 
     new PropertyWatcher(instrument, 'activeProgram').register(activeProgram => {
-      this.reset();
       this.onChange.next();
     });
   }

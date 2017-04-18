@@ -7,7 +7,21 @@
     <md-icon *ngIf="!engine.playing" aria-label="Play">play_arrow</md-icon>
     <md-icon *ngIf="engine.playing" aria-label="Stop">stop</md-icon>
   </button>
-  <md-slider [(ngModel)]="machine.bpm" min="80" max="250" thumbLabel ></md-slider> {{machine.bpm}} BPM
+  <md-slider [(ngModel)]="machine.bpm" min="80" max="250" thumbLabel></md-slider> {{machine.bpm}} BPM
+  <md-select [(ngModel)]="machine.keyNote" placeholder="Key">
+    <md-option [value]="0">C</md-option>
+    <md-option [value]="1">C#</md-option>
+    <md-option [value]="2">D</md-option>
+    <md-option [value]="3">D#</md-option>
+    <md-option [value]="4">E</md-option>
+    <md-option [value]="5">F</md-option>
+    <md-option [value]="6">F#</md-option>
+    <md-option [value]="7">G</md-option>
+    <md-option [value]="8">G#</md-option>
+    <md-option [value]="9">A</md-option>
+    <md-option [value]="10">A#</md-option>
+    <md-option [value]="11">B</md-option>
+  </md-select>
   <div>
     <bm-beat-indicator [index]="beatIndex()"></bm-beat-indicator>
   </div>

@@ -1,3 +1,4 @@
+import { INoteSpec } from './beat-engine.service';
 import { Injectable, NgZone } from '@angular/core';
 import { IMachine, IInstrument } from './machine-interfaces';
 import { AudioBackendService, InstrumentPlayer, PropertyWatcher } from './audio-backend.service';
@@ -41,6 +42,15 @@ export class BeatEngineService {
               this.scheduleBuffers();
             }
           });
+
+        new PropertyWatcher(this.machine, 'keyNote')
+          .register(newValue => {
+            if (this.playing) {
+              this.machine.instruments
+                .filter(instrument => instrument.keyedInstrument)
+                .map(instrument => this.rescheduleInstrument(instrument));
+            }
+          });
       }
     }
   }
@@ -60,7 +70,7 @@ export class BeatEngineService {
           if (!instrumentPlayer) {
             instrumentPlayer = new InstrumentPlayer(this.mixer.context, instrument);
             instrumentPlayer.onChange.subscribe(() => {
-              this.rescheduleInstrument(instrumentPlayer, instrument);
+              this.rescheduleInstrument(instrument);
             });
             this.instrumentPlayers[instrument.id] = instrumentPlayer;
           }
@@ -78,9 +88,11 @@ export class BeatEngineService {
     });
   }
 
-  rescheduleInstrument(player: InstrumentPlayer, instrument: IInstrument) {
+  rescheduleInstrument(instrument: IInstrument) {
+    const player = this.instrumentPlayers[instrument.id];
+    player.reset();
     const beatTime = 60. / this.machine.bpm;
-    for (let beatIndex = Math.ceil(this.getBeatIndex()); beatIndex < this.nextBeatIndex; beatIndex++) {
+    for (let beatIndex = Math.round(this.getBeatIndex()); beatIndex < this.nextBeatIndex; beatIndex++) {
       this.instrumentNotes(instrument, beatIndex).forEach(note => {
         this.mixer.play(note.sampleName, player, (beatIndex + note.beatOffset) * beatTime, note.velocity);
       });
@@ -88,22 +100,42 @@ export class BeatEngineService {
   }
 
   private instrumentNotes(instrument: IInstrument, beatIndex: number): INoteSpec[] {
+    const result: INoteSpec[] = [];
     if (instrument.enabled) {
       const program = instrument.programs[instrument.activeProgram];
       beatIndex = beatIndex % (program.length / 2);
-      return program.notes
+      program.notes
         .filter(note => (note.index === beatIndex * 2) || (note.index === beatIndex * 2 + 1))
-        .map(note => {
-          const pitch = instrument.pitchOffset + note.pitch;
-          return {
-            sampleName: instrument.id + '-' + pitch,
-            beatOffset: note.index === beatIndex * 2 ? 0 : 0.5,
-            velocity: note.velocity
-          };
+        .forEach(note => {
+          let pitch = note.pitch;
+          const beatOffset = note.index === beatIndex * 2 ? 0 : 0.5;
+          if (instrument.keyedInstrument) {
+            pitch += this.machine.keyNote;
+          }
+          if (note.hand !== 'left') {
+            result.push({
+              sampleName: instrument.id + '-' + (pitch + instrument.pitchOffset),
+              beatOffset,
+              velocity: note.velocity
+            });
+            if (note.pianoTonic) {
+              result.push({
+                sampleName: instrument.id + '-' + (pitch + instrument.pitchOffset + 12),
+                beatOffset,
+                velocity: note.velocity
+              });
+            }
+          }
+          if (instrument.playBothHands && note.hand !== 'right') {
+            result.push({
+              sampleName: instrument.id + '-' + (pitch + instrument.leftHandPitchOffset),
+              beatOffset,
+              velocity: note.velocity
+            });
+          }
         });
-    } else {
-      return [];
     }
+    return result;
   }
 
   private stopAllInstruments() {

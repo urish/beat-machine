@@ -10,6 +10,7 @@ export class XMLLoaderService {
     const machineElement = xmlDocument.getElementsByTagNameNS(this.NS_BEAT_MACHINE, 'Machine')[0];
     const machine = {
       instruments: [],
+      keyNote: 0,
       bpm: 180
     };
 
@@ -42,7 +43,10 @@ export class XMLLoaderService {
       activeProgram: parseInt(childValue('activeProgram', '0'), 10),
       programs: [],
       respectsClave: childValue('respectsClave', 'false') === 'true',
+      keyedInstrument: childValue('keyedInstrument', 'false') === 'true',
       pitchOffset: parseInt(childValue('pitchOffset', '0'), 10),
+      playBothHands: childValue('playBothHands', 'false') === 'true',
+      leftHandPitchOffset: parseInt(childValue('leftHandPitchOffset', '0'), 10),
       volume: parseFloat(childValue('volume', '1.0'))
     };
 

@@ -3,7 +3,7 @@ export interface INote {
   pitch: number;
   velocity?: number;
   pianoTonic?: boolean;
-  hand?: string;
+  hand?: 'right' | 'left';
 }
 
 export interface IProgram {
@@ -20,10 +20,14 @@ export interface IInstrument {
   programs: IProgram[];
   respectsClave: boolean;
   pitchOffset: number;
+  keyedInstrument: boolean;
+  playBothHands: boolean;
+  leftHandPitchOffset: number;
   volume: number;
 }
 
 export interface IMachine {
   bpm: number;
+  keyNote: number;
   instruments: IInstrument[];
 }
