@@ -39,4 +39,32 @@ export class AppComponent {
     }
     return this.lastBeatIndex;
   }
+
+  onKeyDown(event: KeyboardEvent) {
+    switch (event.key) {
+      case '+': case '=':
+        this.machine.bpm += Math.min(250, this.machine.bpm + 5);
+        break;
+
+      case '-':
+        this.machine.bpm = Math.max(80, this.machine.bpm - 5);
+        break;
+
+      case 'k':
+        this.machine.keyNote = (this.machine.keyNote + 7) % 12;
+        break;
+
+      case 'K':
+        this.machine.keyNote = (this.machine.keyNote + 5) % 12;
+    }
+    if (event.key >= '0' && event.key <= '9') {
+      const index = (parseInt(event.key, 10) + 10 - 1) % 10;
+      const instrument = this.machine.instruments[index];
+      if (event.altKey) {
+        instrument.activeProgram = (instrument.activeProgram + 1) % instrument.programs.length;
+      } else {
+        instrument.enabled = !instrument.enabled;
+      }
+    }
+  }
 }
