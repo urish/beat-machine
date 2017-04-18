@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Http, ResponseContentType } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/observable/fromPromise';
+
 import { IInstrument } from './machine-interfaces';
 
 export class PropertyWatcher<T> {
@@ -90,7 +95,7 @@ export class AudioBackendService {
   private zeroTime: number = null;
   private _context: AudioContext;
 
-  constructor() {
+  constructor(private http: Http) {
     this.ready = false;
     this.loadBank('assets/audio/main.wav');
     this.loadBankDescriptor('assets/audio/main.json');
@@ -105,25 +110,19 @@ export class AudioBackendService {
   }
 
   private loadBank(url: string) {
-    const request = new XMLHttpRequest();
-    request.open('GET', url, true);
-    request.responseType = 'arraybuffer';
-    request.onload = () => {
-      this.context.decodeAudioData(request.response, buffer => {
+    this.http.get(url, { responseType: ResponseContentType.ArrayBuffer })
+      .mergeMap(result => Observable.fromPromise(this.context.decodeAudioData(result.arrayBuffer())))
+      .subscribe(buffer => {
         this.buffer = buffer;
         this.ready = true;
       });
-    };
-    request.send();
   }
 
   private loadBankDescriptor(url: string) {
-    const request = new XMLHttpRequest();
-    request.open('GET', url, true);
-    request.onload = () => {
-      this.bankDescriptor = JSON.parse(request.responseText);
-    };
-    request.send();
+    this.http.get(url)
+      .subscribe(response => {
+        this.bankDescriptor = response.json();
+      });
   }
 
   play(sampleName: string, player: InstrumentPlayer, when: number, velocity?: number) {
