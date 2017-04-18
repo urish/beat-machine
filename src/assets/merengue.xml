@@ -1,0 +1,354 @@
+﻿<bm:Machine xmlns:bm="http://www.salsabeatmachine.org/xns/bm" xmlns="http://www.salsabeatmachine.org/xns/bm">
+	<bm:instrumentList>
+		<Cowbell title="Cowbell" xmlns="http://www.salsabeatmachine.org/xns/instruments">
+			<programs>
+				<bm:Program length="16" title="Complex Cowbell" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="0"/>
+					<bm:Note index="2" pitch="0" velocity="0.2"/>
+					<bm:Note index="4" pitch="0"/>
+					<bm:Note index="6" pitch="0" velocity="0.2"/>
+					<bm:Note index="7" pitch="0" velocity="0.2"/>
+					<bm:Note index="8" pitch="0"/>
+					<bm:Note index="10" pitch="0" velocity="0.2"/>
+					<bm:Note index="11" pitch="0" velocity="0.2"/>
+					<bm:Note index="12" pitch="0"/>
+					<bm:Note index="14" pitch="0" velocity="0.2"/>
+					<bm:Note index="15" pitch="0" velocity="0.2"/>
+				</bm:Program>
+				<bm:Program length="16" title="Simple Cowbell" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="0"/>
+					<bm:Note index="4" pitch="0"/>
+					<bm:Note index="8" pitch="0"/>
+					<bm:Note index="12" pitch="0"/>
+				</bm:Program>
+			</programs>
+			<volume>0.53</volume>
+			<enabled>true</enabled>
+			<activeProgram>1</activeProgram>
+		</Cowbell>
+
+		<Congas title="Congas" xmlns="http://www.salsabeatmachine.org/xns/instruments">
+			<programs>
+				<bm:Program length="16" title="Merengue 1" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="3"/>
+					<bm:Note index="1" pitch="3"/>
+					<bm:Note index="4" pitch="2"/>
+					<bm:Note index="6" pitch="3"/>
+					<bm:Note index="8" pitch="2"/>
+					<bm:Note index="12" pitch="2"/>
+					<bm:Note index="14" pitch="4"/>
+				</bm:Program>
+			</programs>
+			<activeProgram>0</activeProgram>
+			<volume>0.90</volume>
+			<enabled>true</enabled>
+		</Congas>
+
+		<Piano title="Piano" xmlns="http://www.salsabeatmachine.org/xns/instruments">
+			<playBothHands>true</playBothHands>
+			<tonicPlus8>true</tonicPlus8>
+			<pitchOffset>60</pitchOffset>
+			<leftHandPitchOffset>48</leftHandPitchOffset>
+			<keyedInstrument>true</keyedInstrument>
+			<programs>
+				<bm:Program title="Merengue I-iv" length='32' separateHands="true">
+					<!-- Left Hand -->
+					<bm:Note index='1' pitch='0' hand="left" />
+					<bm:Note index='1' pitch='4' hand="left" />
+					<bm:Note index='1' pitch='7' hand="left" />
+
+					<bm:Note index='6' pitch='0' hand="left" />
+					<bm:Note index='6' pitch='4' hand="left" />
+					<bm:Note index='6' pitch='7' hand="left" />
+
+					<bm:Note index='10' pitch='0' hand="left" />
+					<bm:Note index='10' pitch='4' hand="left" />
+					<bm:Note index='10' pitch='7' hand="left" />
+
+					<bm:Note index='14' pitch='0' hand="left" />
+					<bm:Note index='14' pitch='4' hand="left" />
+					<bm:Note index='14' pitch='7' hand="left" />
+
+					<bm:Note index='17' pitch='0' hand="left" />
+					<bm:Note index='17' pitch='5' hand="left" />
+					<bm:Note index='17' pitch='8' hand="left" />
+
+					<bm:Note index='22' pitch='0' hand="left" />
+					<bm:Note index='22' pitch='5' hand="left" />
+					<bm:Note index='22' pitch='8' hand="left" />
+
+					<bm:Note index='26' pitch='0' hand="left" />
+					<bm:Note index='26' pitch='5' hand="left" />
+					<bm:Note index='26' pitch='8' hand="left" />
+
+					<bm:Note index='30' pitch='0' hand="left" />
+					<bm:Note index='30' pitch='5' hand="left" />
+					<bm:Note index='30' pitch='8' hand="left" />
+
+					<!-- Right Hand -->
+					<bm:Note index='0'  pitch='0' hand="right" pianoTonic="true" />
+					<bm:Note index='4'  pitch='4' hand="right" />
+					<bm:Note index='4'  pitch='7' hand="right" />
+					<bm:Note index='8'  pitch='0' hand="right" pianoTonic="true" />
+					<bm:Note index='12'  pitch='4' hand="right" />
+					<bm:Note index='12'  pitch='7' hand="right" />
+					<bm:Note index='16'  pitch='0' hand="right" pianoTonic="true" />
+					<bm:Note index='20'  pitch='5' hand="right" />
+					<bm:Note index='20'  pitch='8' hand="right" />
+					<bm:Note index='24'  pitch='0' hand="right" pianoTonic="true" />
+					<bm:Note index='28'  pitch='5' hand="right" />
+					<bm:Note index='28'  pitch='8' hand="right" />
+				</bm:Program>
+				<bm:Program title="Merengue I-iv + Passing tones" length='32' separateHands="true">
+					<!-- Left Hand -->
+					<bm:Note index='1' pitch='0' hand="left" />
+					<bm:Note index='1' pitch='4' hand="left" />
+					<bm:Note index='1' pitch='7' hand="left" />
+
+					<bm:Note index='6' pitch='0' hand="left" />
+					<bm:Note index='6' pitch='4' hand="left" />
+					<bm:Note index='6' pitch='7' hand="left" />
+
+					<bm:Note index='10' pitch='0' hand="left" />
+					<bm:Note index='10' pitch='4' hand="left" />
+					<bm:Note index='10' pitch='7' hand="left" />
+
+					<bm:Note index='14' pitch='0' hand="left" />
+					<bm:Note index='14' pitch='4' hand="left" />
+					<bm:Note index='14' pitch='7' hand="left" />
+
+					<bm:Note index='17' pitch='0' hand="left" />
+					<bm:Note index='17' pitch='5' hand="left" />
+					<bm:Note index='17' pitch='8' hand="left" />
+
+					<bm:Note index='22' pitch='0' hand="left" />
+					<bm:Note index='22' pitch='5' hand="left" />
+					<bm:Note index='22' pitch='8' hand="left" />
+
+					<bm:Note index='26' pitch='0' hand="left" />
+					<bm:Note index='26' pitch='5' hand="left" />
+					<bm:Note index='26' pitch='8' hand="left" />
+
+					<bm:Note index='30' pitch='0' hand="left" />
+					<bm:Note index='30' pitch='5' hand="left" />
+					<bm:Note index='30' pitch='8' hand="left" />
+
+					<!-- Right Hand -->
+					<bm:Note index='0'  pitch='0' hand="right" pianoTonic="true" />
+					<bm:Note index='4'  pitch='4' hand="right" />
+					<bm:Note index='4'  pitch='7' hand="right" />
+					<bm:Note index='8'  pitch='0' hand="right" pianoTonic="true" />
+					<bm:Note index='12' pitch='4' hand="right" />
+					<bm:Note index='12' pitch='7' hand="right" />
+					<bm:Note index='14' pitch='-2' hand="right" pianoTonic="true" />
+					<bm:Note index='16' pitch='0' hand="right" pianoTonic="true" />
+					<bm:Note index='20' pitch='5' hand="right" />
+					<bm:Note index='20' pitch='8' hand="right" />
+					<bm:Note index='24' pitch='0' hand="right" pianoTonic="true" />
+					<bm:Note index='28' pitch='5' hand="right" />
+					<bm:Note index='28' pitch='8' hand="right" />
+					<bm:Note index='30' pitch='1' hand="right" pianoTonic="true" />
+				</bm:Program>
+				<bm:Program title="Merengue I+iv by Alex Wilson" length='32' separateHands="true">
+					<!-- Left Hand -->
+					<bm:Note index='1' pitch='0' hand="left" />
+					<bm:Note index='2' pitch='4' hand="left" />
+					<bm:Note index='3' pitch='7' hand="left" />
+
+					<bm:Note index='6' pitch='0' hand="left" />
+					<bm:Note index='6' pitch='4' hand="left" />
+					<bm:Note index='6' pitch='7' hand="left" />
+
+					<bm:Note index='10' pitch='0' hand="left" />
+					<bm:Note index='10' pitch='4' hand="left" />
+					<bm:Note index='10' pitch='7' hand="left" />
+
+					<bm:Note index='14' pitch='0' hand="left" />
+					<bm:Note index='14' pitch='4' hand="left" />
+					<bm:Note index='14' pitch='7' hand="left" />
+
+					<bm:Note index='17' pitch='0' hand="left" />
+					<bm:Note index='18' pitch='5' hand="left" />
+					<bm:Note index='19' pitch='8' hand="left" />
+
+					<bm:Note index='22' pitch='0' hand="left" />
+					<bm:Note index='22' pitch='5' hand="left" />
+					<bm:Note index='22' pitch='8' hand="left" />
+
+					<bm:Note index='26' pitch='0' hand="left" />
+					<bm:Note index='26' pitch='5' hand="left" />
+					<bm:Note index='26' pitch='8' hand="left" />
+
+					<bm:Note index='30' pitch='0' hand="left" />
+					<bm:Note index='30' pitch='5' hand="left" />
+					<bm:Note index='30' pitch='8' hand="left" />
+
+					<!-- Right Hand -->
+					<bm:Note index='0'  pitch='0' hand="right" pianoTonic="true" />
+					<bm:Note index='4'  pitch='4' hand="right" />
+					<bm:Note index='4'  pitch='7' hand="right" />
+					<bm:Note index='8'  pitch='7' hand="right" />
+					<bm:Note index='8'  pitch='10' hand="right" />
+					<bm:Note index='12' pitch='4' hand="right" />
+					<bm:Note index='12' pitch='7' hand="right" />
+					<bm:Note index='14' pitch='-2' hand="right" pianoTonic="true" />
+					<bm:Note index='16' pitch='0' hand="right" pianoTonic="true" />
+					<bm:Note index='20' pitch='5' hand="right" />
+					<bm:Note index='20' pitch='8' hand="right" />
+					<bm:Note index='23' pitch='8' hand="right" />
+					<bm:Note index='23' pitch='12' hand="right" />
+					<bm:Note index='24' pitch='8' hand="right" />
+					<bm:Note index='24' pitch='12' hand="right" />
+					<bm:Note index='27' pitch='5' hand="right" />
+					<bm:Note index='27' pitch='8' hand="right" />
+					<bm:Note index='28' pitch='5' hand="right" />
+					<bm:Note index='28' pitch='8' hand="right" />
+				</bm:Program>
+			</programs>
+			<volume>0.5</volume>
+			<enabled>true</enabled>
+			<activeProgram>1</activeProgram>
+		</Piano>
+
+		<Instructor title="Instructor" xmlns="http://www.salsabeatmachine.org/xns/instruments">
+			<programs>
+				<bm:Program length="16" title="1" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="0"/>
+				</bm:Program>
+				<bm:Program length="16" title="1,2,3,4" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="0"/>
+					<bm:Note index="4" pitch="1"/>
+					<bm:Note index="8" pitch="2"/>
+					<bm:Note index="12" pitch="3"/>
+				</bm:Program>
+			</programs>
+			<volume>1</volume>
+			<enabled>true</enabled>
+			<activeProgram>1</activeProgram>
+		</Instructor>
+
+		<Bass title="Bass" xmlns="http://www.salsabeatmachine.org/xns/instruments">
+			<enabled>true</enabled>
+			<volume>0.52</volume>
+			<pitchOffset>36</pitchOffset>
+			<activeProgram>0</activeProgram>
+			<keyedInstrument>true</keyedInstrument>
+			<programs>
+				<bm:Program length="32" title="Merengue 1-5-1-5-4-1-4" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="0" length="2"/>
+					<bm:Note index="4" pitch="7" length="2"/>
+					<bm:Note index="8" pitch="0" length="2"/>
+					<bm:Note index="12" pitch="7" length="2"/>
+					<bm:Note index="16" pitch="5" length="2"/>
+					<bm:Note index="20" pitch="0" length="2"/>
+					<bm:Note index="24" pitch="5" length="7"/>
+				</bm:Program>
+			</programs>
+		</Bass>
+
+		<Guira title="Güira" xmlns="http://www.salsabeatmachine.org/xns/instruments">
+			<programs>
+				<bm:Program length="4" title="Simple" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="0" velocity="0.7"/>
+					<bm:Note index="2" pitch="0" velocity="0.7"/>
+					<bm:Note index="3" pitch="0" velocity="0.7"/>
+				</bm:Program>
+
+				<bm:Program length="4" title="Downbeats" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="0" velocity="0.7"/>
+					<bm:Note index="2" pitch="0" velocity="0.7"/>
+				</bm:Program>
+
+				<bm:Program length="8" title="Merengue" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="0" velocity="0.66"/>
+					<bm:Note index="2" pitch="0" velocity="0.66"/>
+					<bm:Note index="3" pitch="0" velocity="0.66"/>
+					<bm:Note index="4" pitch="1"/>
+					<bm:Note index="6" pitch="0" velocity="0.66"/>
+					<bm:Note index="7" pitch="0" velocity="0.66"/>
+				</bm:Program>
+
+				<bm:Program length="8" title="Variation 1" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="0"/>
+					<bm:Note index="1" pitch="0"/>
+					<bm:Note index="3" pitch="0"/>
+					<bm:Note index="4" pitch="1"/>
+				</bm:Program>
+
+				<bm:Program length="4" title="Variation 2" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="0" velocity="0.7"/>
+					<bm:Note index="2" pitch="1"/>
+				</bm:Program>
+			</programs>
+			<volume>0.44</volume>
+			<enabled>true</enabled>
+			<activeProgram>0</activeProgram>
+		</Guira>
+
+		<Tambora xmlns="http://www.salsabeatmachine.org/xns/instruments"
+				xmlns:bm="http://www.salsabeatmachine.org/xns/bm"
+				title="Tambora">
+			<programs>
+				<bm:Program title="Basic" length='8'>
+					<bm:Note index='0' pitch='0' />
+					<bm:Note index='3' pitch='1' />
+					<bm:Note index='4' pitch='0' />
+					<bm:Note index='6' pitch='2' />
+				</bm:Program>
+			</programs>
+			<volume>1</volume>
+			<enabled>true</enabled>
+			<activeProgram>0</activeProgram>
+		</Tambora>
+
+		<KickDrum title="Kick Drum" xmlns="http://www.salsabeatmachine.org/xns/instruments">
+			<programs>
+				<bm:Program length="4" title="Merengue Kick" xmlns="http://www.salsabeatmachine.org/xns/bm">
+					<bm:Note index="0" pitch="0"/>
+				</bm:Program>
+			</programs>
+			<volume>1</volume>
+			<enabled>true</enabled>
+			<activeProgram>0</activeProgram>
+		</KickDrum>
+
+		<!--
+		<Saxophone xmlns="http://www.salsabeatmachine.org/xns/instruments" title="Saxophone">
+			<activeProgram>0</activeProgram>
+			<pitchOffset>48</pitchOffset>
+			<programs>
+				<bm:Program title="Merengue 1" length='32'>
+					<bm:Note index='0' pitch='12' length='2' />
+					<bm:Note index='4' pitch='10' length='2' />
+					<bm:Note index='6' pitch='11' length='2' />
+					<bm:Note index='8' pitch='12' length='2' />
+					<bm:Note index='12' pitch='8' length='2' />
+					<bm:Note index='14' pitch='7' length='2' />
+					<bm:Note index='16' pitch='5' length='2'/>
+					<bm:Note index='20' pitch='8' length='2' />
+					<bm:Note index='22' pitch='7' length='2' />
+					<bm:Note index='24' pitch='5' length='2'/>
+					<bm:Note index='28' pitch='10' length='2' />
+					<bm:Note index='30' pitch='11' length='2'/>
+				</bm:Program>
+			</programs>
+		</Saxophone>
+		-->
+
+	</bm:instrumentList>
+	<bm:enabled>false</bm:enabled>
+	<bm:timeCreated></bm:timeCreated>
+	<bm:description></bm:description>
+	<bm:parentMachine></bm:parentMachine>
+  <bm:flavor>Merengue</bm:flavor>
+	<bm:bpm>160</bm:bpm>
+	<bm:clave32>false</bm:clave32>
+	<bm:keyNote>8</bm:keyNote>
+	<bm:volume>0.5</bm:volume>
+	<bm:author>Uri Shaked</bm:author>
+	<bm:machineId>MERENGUE-DEFAULT</bm:machineId>
+	<bm:title>Merengue Beat Machine</bm:title>
+	<bm:autoControlEnabled>true</bm:autoControlEnabled>
+	<bm:autoControlInterval>64</bm:autoControlInterval>
+	<bm:machineVersion>2</bm:machineVersion>
+</bm:Machine>

@@ -1,6 +1,6 @@
-import { INoteSpec } from './beat-engine.service';
 import { Injectable, NgZone } from '@angular/core';
 import { IMachine, IInstrument } from './machine-interfaces';
+import { INoteSpec } from './beat-engine.service';
 import { AudioBackendService, InstrumentPlayer, PropertyWatcher } from './audio-backend.service';
 
 export interface INoteSpec {
@@ -32,6 +32,10 @@ export class BeatEngineService {
     if (value !== this._machine) {
       this._machine = value;
       if (this.machine) {
+        if (this.playing) {
+          this.stop();
+          this.start();
+        }
         new PropertyWatcher(this.machine, 'bpm')
           .register(newValue => {
             if (this.playing) {
@@ -62,7 +66,7 @@ export class BeatEngineService {
 
   private scheduleBuffers() {
     if (this.mixer.ready) {
-      const beatTime = 60. / this.machine.bpm;
+      const beatTime = this.beatTime;
       while (this.nextBeatIndex - this.getBeatIndex() < 32) {
         const beatIndex = this.nextBeatIndex;
         this.machine.instruments.forEach(instrument => {
@@ -91,7 +95,7 @@ export class BeatEngineService {
   rescheduleInstrument(instrument: IInstrument) {
     const player = this.instrumentPlayers[instrument.id];
     player.reset();
-    const beatTime = 60. / this.machine.bpm;
+    const beatTime = this.beatTime;
     for (let beatIndex = Math.round(this.getBeatIndex()); beatIndex < this.nextBeatIndex; beatIndex++) {
       this.instrumentNotes(instrument, beatIndex).forEach(note => {
         this.mixer.play(note.sampleName, player, (beatIndex + note.beatOffset) * beatTime, note.velocity);
@@ -158,14 +162,17 @@ export class BeatEngineService {
     return this.interval != null;
   }
 
+  get beatTime() {
+    const result = 60. / this.machine.bpm;
+    return this.machine.flavor === 'Merengue' ? result / 2 : result;
+  }
+
   public getBeatIndex() {
-    const beatTime = 60. / this.machine.bpm;
-    return this.mixer.getCurrentTime() / beatTime;
+    return this.mixer.getCurrentTime() / this.beatTime;
   }
 
   private timeToNextBeat() {
-    const beatTime = 60. / this.machine.bpm;
-    return this.mixer.getCurrentTime() % beatTime;
+    return this.mixer.getCurrentTime() % this.beatTime;
   }
 
   private beatTick() {

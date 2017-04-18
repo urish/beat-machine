@@ -30,4 +30,5 @@ export interface IMachine {
   bpm: number;
   keyNote: number;
   instruments: IInstrument[];
+  flavor: 'Salsa' | 'Merengue';
 }

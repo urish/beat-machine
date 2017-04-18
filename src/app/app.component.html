@@ -23,7 +23,8 @@
     <md-option [value]="11">B</md-option>
   </md-select>
   <div>
-    <bm-beat-indicator [index]="beatIndex()"></bm-beat-indicator>
+    <bm-beat-indicator [index]="beatIndex()" [max]="beatCount()"></bm-beat-indicator>
+    <md-checkbox [(ngModel)]="merengueEnabled"><label>Merengue</label></md-checkbox>
   </div>
 
   <div>

@@ -8,14 +8,17 @@ export class XMLLoaderService {
 
   loadMachine(xmlDocument: Document): IMachine {
     const machineElement = xmlDocument.getElementsByTagNameNS(this.NS_BEAT_MACHINE, 'Machine')[0];
-    const machine = {
+    const machine: IMachine = {
       instruments: [],
       keyNote: 0,
-      bpm: 180
+      bpm: 180,
+      flavor: 'Salsa'
     };
 
     const processors = {
       bpm: node => machine.bpm = parseInt(node.textContent, 10),
+      keyNote: node => machine.keyNote = parseInt(node.textContent, 10),
+      flavor: node => machine.flavor = node.textContent,
       instrumentList: node => machine.instruments = this.processInstrumentList(node)
     };
 
