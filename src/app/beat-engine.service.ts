@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { IMachine, IInstrument } from './machine-interfaces';
 
 class PropertyWatcher<T> {
@@ -149,7 +149,7 @@ export class BeatEngineService {
   private instrumentPlayers;
   private _machine: IMachine;
 
-  constructor() {
+  constructor(private zone: NgZone) {
     this.context = new AudioContext();
     this.mixer = new Mixer(this.context);
     this.nextBeatIndex = 0;
@@ -168,7 +168,6 @@ export class BeatEngineService {
           .register(newValue => {
             if (this.playing) {
               clearTimeout(this.interval);
-              clearTimeout(this.beatTimer);
               this.stopAllInstruments();
               this.mixer.reset();
               this.nextBeatIndex = 0;
@@ -181,6 +180,7 @@ export class BeatEngineService {
 
   public start() {
     this.scheduleBuffers();
+    this.beatTick();
   }
 
   private scheduleBuffers() {
@@ -203,8 +203,9 @@ export class BeatEngineService {
     } else {
       console.log('Mixer not ready yet');
     }
-    this.interval = setTimeout(() => this.scheduleBuffers(), 1000);
-    this.beatTick();
+    this.zone.runOutsideAngular(() => {
+      this.interval = setTimeout(() => this.scheduleBuffers(), 1000);
+    });
   }
 
   rescheduleInstrument(player: InstrumentPlayer, instrument: IInstrument) {
@@ -266,7 +267,7 @@ export class BeatEngineService {
   }
 
   private beatTick() {
-    // this timer will cause the beat display to update
+    // This timer will cause angular change detection, and therefore update the beat display
     this.beatTimer = setTimeout(() => this.beatTick(), this.timeToNextBeat());
   }
 }
