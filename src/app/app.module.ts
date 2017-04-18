@@ -7,9 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import 'hammerjs';
 
+import { EngineModule } from './engine/engine.module';
 import { AppComponent } from './app.component';
-import { XMLLoaderService } from './xml-loader.service';
-import { BeatEngineService } from './beat-engine.service';
 import { BeatIndicatorComponent } from './beat-indicator/beat-indicator.component';
 
 @NgModule({
@@ -23,11 +22,9 @@ import { BeatIndicatorComponent } from './beat-indicator/beat-indicator.componen
     HttpModule,
     MaterialModule,
     BrowserAnimationsModule,
+    EngineModule,
   ],
-  providers: [
-    BeatEngineService,
-    XMLLoaderService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

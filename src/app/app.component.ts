@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 
-import { BeatEngineService } from './beat-engine.service';
-import { IMachine } from './machine-interfaces';
-import { XMLLoaderService } from './xml-loader.service';
+import { BeatEngineService } from './engine/beat-engine.service';
+import { IMachine } from './engine/machine-interfaces';
+import { XMLLoaderService } from './engine/xml-loader.service';
 
 @Component({
   selector: 'bm-root',
