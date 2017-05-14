@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "npm run build && firebase deploy"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "firebase-tools": "^3.7.0",
     "hammerjs": "^2.0.8",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
