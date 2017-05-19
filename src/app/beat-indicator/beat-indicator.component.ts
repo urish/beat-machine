@@ -15,7 +15,7 @@ const purpleEye = navigator.bluetooth.requestDevice({ filters: [{ services: [0x5
   .then(gatt => gatt.getPrimaryService(0x5100))
   .then(service => service.getCharacteristic(0x5200));
 
-function dance(beat: number) {
+function dance(beat) {
   switch (beat) {
     case 8: return [90 - 20, 90, 90, 90 - 20];
     case 1: return [90 - 20, 90, 90 - 25, 90 - 20];
@@ -25,6 +25,43 @@ function dance(beat: number) {
     case 5: return [90 + 20, 90, 90, 90 + 20];
     case 6:
     case 7: return [90, 90, 90, 90];
+  }
+}
+
+function floor(beat) {
+  switch (beat) {
+    case 8: return [90 - 20, 90, 90, 90 - 20];
+    case 1: return [90, 90, 90, 90];
+    case 2:
+    case 3: return [90 - 20, 90, 90, 90 - 20];
+
+    case 4: return [90 + 20, 90, 90, 90 + 20];
+    case 5: return [90, 90, 90, 90];
+    case 6:
+    case 7: return [90 + 20, 90, 90, 90 + 20];
+  }
+}
+
+function shimmy(beat) {
+  switch (beat) {
+    case 8: return [90 - 20, 90, 90, 90 - 20];
+    case 1: return [90, 90, 90, 90];
+    case 2:
+    case 3: return [90 - 20, 90, 90, 90 - 20];
+
+    case 4: return [90 + 15, 90, 90, 90 - 15];
+    case 5: return [90 - 15, 90, 90, 90 + 15];
+    case 6:
+    case 7: return [90 + 15, 90, 90, 90 - 15];
+  }
+}
+
+function merengue(beat) {
+  switch (beat) {
+    case 1: return [90 + 15, 90, 90, 90 - 15];
+    case 2: return [90 - 15, 90, 90, 90 + 15];
+    case 3: return [90 + 15, 90, 90, 90 - 15];
+    case 4: return [90 - 15, 90, 90, 90 + 15];
   }
 }
 
