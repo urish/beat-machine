@@ -31,14 +31,8 @@
 
   <div>
     <div *ngFor="let instrument of machine?.instruments">
-      <md-checkbox [(ngModel)]="instrument.enabled"></md-checkbox>
-      {{instrument.title}}
-      <md-select [(ngModel)]="instrument.activeProgram">
-        <md-option *ngFor="let p of instrument.programs; let i = index" [value]="i">
-          {{p.title}}
-        </md-option>
-      </md-select>
-      <md-slider [(ngModel)]="instrument.volume" min="0" max="1.0" step="0.1"></md-slider>
+      <bm-instrument-tile [instrument]="instrument">
+      </bm-instrument-tile>
     </div>
   </div>
 </div>
