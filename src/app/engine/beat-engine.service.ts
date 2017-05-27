@@ -13,9 +13,9 @@ export interface INoteSpec {
 export class BeatEngineService {
   private nextBeatIndex: number;
 
-  private interval: number;
-  private beatTimer: number;
-  private instrumentPlayers;
+  private interval: number | null;
+  private beatTimer: number | null;
+  private instrumentPlayers: { [key: string]: InstrumentPlayer };
   private _machine: IMachine;
 
   constructor(private zone: NgZone, private mixer: AudioBackendService) {
@@ -39,7 +39,9 @@ export class BeatEngineService {
         new PropertyWatcher(this.machine, 'bpm')
           .register(newValue => {
             if (this.playing) {
-              clearTimeout(this.interval);
+              if (this.interval) {
+                clearTimeout(this.interval);
+              }
               this.stopAllInstruments();
               this.mixer.reset();
               this.nextBeatIndex = 0;
@@ -149,10 +151,14 @@ export class BeatEngineService {
   }
 
   public stop() {
-    clearTimeout(this.interval);
-    this.interval = null;
-    clearTimeout(this.beatTimer);
-    this.beatTimer = null;
+    if (this.interval) {
+      clearTimeout(this.interval);
+      this.interval = null;
+    }
+    if (this.beatTimer) {
+      clearTimeout(this.beatTimer);
+      this.beatTimer = null;
+    }
     this.stopAllInstruments();
     this.mixer.reset();
     this.nextBeatIndex = 0;
