@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 import { BeatEngineService } from './engine/beat-engine.service';
 import { IMachine } from './engine/machine-interfaces';
@@ -15,7 +18,19 @@ export class AppComponent {
   salsaMachine: IMachine;
   merengueMachine: IMachine;
 
-  constructor(http: Http, loader: XMLLoaderService, public engine: BeatEngineService) {
+  beat: Observable<number> = this.engine.beat
+    .map((beatIndex) => {
+      beatIndex = this.engine.playing ? Math.round((0.5 + beatIndex % 8)) : 0;
+      if (this.machine.flavor === 'Merengue') {
+        beatIndex = Math.round(beatIndex / 2);
+      }
+      return beatIndex;
+    })
+    .distinctUntilChanged()
+    .do(() => setTimeout(() => this.cd.detectChanges(), 0));
+
+  constructor(http: Http, loader: XMLLoaderService, private cd: ChangeDetectorRef,
+    public engine: BeatEngineService) {
     http.get('assets/salsa.xml').subscribe(value => {
       const xml = (new DOMParser()).parseFromString(value.text(), 'text/xml');
       this.salsaMachine = loader.loadMachine(xml);
@@ -37,19 +52,6 @@ export class AppComponent {
     } else {
       this.engine.start();
     }
-  }
-
-  beatIndex() {
-    let beatIndex = this.engine.playing ? Math.round((0.5 + this.engine.getBeatIndex() % 8)) : 0;
-    if (this.machine.flavor === 'Merengue') {
-      beatIndex = Math.round(beatIndex / 2);
-    }
-    if (beatIndex !== this.lastBeatIndex) {
-      setTimeout(() => {
-        this.lastBeatIndex = beatIndex;
-      }, 0);
-    }
-    return this.lastBeatIndex;
   }
 
   beatCount() {

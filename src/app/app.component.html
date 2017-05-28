@@ -31,7 +31,7 @@
       <md-checkbox [(ngModel)]="merengueEnabled"><label>Merengue</label></md-checkbox>
     </div>
     <div>
-      <bm-beat-indicator [index]="beatIndex()" [max]="beatCount()"></bm-beat-indicator>
+      <bm-beat-indicator [index]="beat|async" [max]="beatCount()"></bm-beat-indicator>
     </div>
   </md-card>
 
