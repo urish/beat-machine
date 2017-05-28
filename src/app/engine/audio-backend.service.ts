@@ -7,6 +7,10 @@ import 'rxjs/add/observable/fromPromise';
 
 import { IInstrument } from './machine-interfaces';
 
+interface BankDescriptor {
+  [sampleName: string]: number[];
+}
+
 export class PropertyWatcher<T> {
   private value: T;
   private watchers: Function[];
@@ -23,7 +27,7 @@ export class PropertyWatcher<T> {
     });
   }
 
-  public register(fn: Function) {
+  public register(fn: (newValue: T) => void) {
     this.watchers.push(fn);
   }
 }
@@ -41,13 +45,13 @@ export class InstrumentPlayer {
   constructor(private context: AudioContext, private instrument: IInstrument) {
     this.reset();
 
-    new PropertyWatcher(instrument, 'volume').register(newValue => {
+    new PropertyWatcher<number>(instrument, 'volume').register(newValue => {
       if (instrument.enabled) {
         this.gain.gain.value = newValue;
       }
     });
 
-    new PropertyWatcher(instrument, 'enabled').register(enabled => {
+    new PropertyWatcher<boolean>(instrument, 'enabled').register(enabled => {
       if (enabled) {
         this.onChange.next();
       } else {
@@ -55,7 +59,7 @@ export class InstrumentPlayer {
       }
     });
 
-    new PropertyWatcher(instrument, 'activeProgram').register(activeProgram => {
+    new PropertyWatcher<string>(instrument, 'activeProgram').register(activeProgram => {
       this.onChange.next();
     });
   }
@@ -70,7 +74,7 @@ export class InstrumentPlayer {
     this.gainMap = {};
   }
 
-  createNoteDestination(velocity: number): AudioNode {
+  createNoteDestination(velocity?: number): AudioNode {
     if (typeof velocity !== 'number' || velocity === 1.0) {
       return this.gain;
     }
@@ -89,8 +93,8 @@ export class AudioBackendService {
 
   public ready: boolean;
   private buffer: AudioBuffer;
-  private bankDescriptor: any;
-  private zeroTime: number = null;
+  private bankDescriptor: BankDescriptor;
+  private zeroTime: number | null = null;
   private _context: AudioContext;
 
   constructor(private http: Http) {
@@ -139,6 +143,9 @@ export class AudioBackendService {
   }
 
   getCurrentTime(): number {
+    if (!this.zeroTime) {
+      return 0;
+    }
     return this.context.currentTime - this.zeroTime;
   }
 }

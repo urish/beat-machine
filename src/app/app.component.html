@@ -4,41 +4,41 @@
 
 <md-spinner *ngIf="!machine"></md-spinner>
 
-<div *ngIf="machine" (keydown)="onKeyDown($event)">
-  <button md-button md-icon-button (click)="togglePlay()">
-    <md-icon *ngIf="!engine.playing" aria-label="Play">play_arrow</md-icon>
-    <md-icon *ngIf="engine.playing" aria-label="Stop">stop</md-icon>
-  </button>
-  <md-slider [(ngModel)]="machine.bpm" min="80" max="250" thumbLabel></md-slider> {{machine.bpm}} BPM
-  <md-select [(ngModel)]="machine.keyNote" placeholder="Key">
-    <md-option [value]="0">C</md-option>
-    <md-option [value]="1">C#</md-option>
-    <md-option [value]="2">D</md-option>
-    <md-option [value]="3">D#</md-option>
-    <md-option [value]="4">E</md-option>
-    <md-option [value]="5">F</md-option>
-    <md-option [value]="6">F#</md-option>
-    <md-option [value]="7">G</md-option>
-    <md-option [value]="8">G#</md-option>
-    <md-option [value]="9">A</md-option>
-    <md-option [value]="10">A#</md-option>
-    <md-option [value]="11">B</md-option>
-  </md-select>
-  <div>
-    <bm-beat-indicator [index]="beatIndex()" [max]="beatCount()"></bm-beat-indicator>
-    <md-checkbox [(ngModel)]="merengueEnabled"><label>Merengue</label></md-checkbox>
-  </div>
-
-  <div>
-    <div *ngFor="let instrument of machine?.instruments">
-      <md-checkbox [(ngModel)]="instrument.enabled"></md-checkbox>
-      {{instrument.title}}
-      <md-select [(ngModel)]="instrument.activeProgram">
-        <md-option *ngFor="let p of instrument.programs; let i = index" [value]="i">
-          {{p.title}}
-        </md-option>
+<div *ngIf="machine" (keydown)="onKeyDown($event)" class="app-container">
+  <md-card class="controls">
+    <div class="controls-top">
+      <button md-button md-icon-button (click)="togglePlay()">
+        <md-icon *ngIf="!engine.playing" aria-label="Play">play_arrow</md-icon>
+        <md-icon *ngIf="engine.playing" aria-label="Stop">stop</md-icon>
+      </button>
+      <span>
+        <md-slider [(ngModel)]="machine.bpm" min="80" max="250" thumbLabel></md-slider> {{machine.bpm}} BPM
+      </span>
+      <md-select [(ngModel)]="machine.keyNote" placeholder="Key">
+        <md-option [value]="0">C</md-option>
+        <md-option [value]="1">C#</md-option>
+        <md-option [value]="2">D</md-option>
+        <md-option [value]="3">D#</md-option>
+        <md-option [value]="4">E</md-option>
+        <md-option [value]="5">F</md-option>
+        <md-option [value]="6">F#</md-option>
+        <md-option [value]="7">G</md-option>
+        <md-option [value]="8">G#</md-option>
+        <md-option [value]="9">A</md-option>
+        <md-option [value]="10">A#</md-option>
+        <md-option [value]="11">B</md-option>
       </md-select>
-      <md-slider [(ngModel)]="instrument.volume" min="0" max="1.0" step="0.1"></md-slider>
+      <md-checkbox [(ngModel)]="merengueEnabled"><label>Merengue</label></md-checkbox>
     </div>
-  </div>
+    <div>
+      <bm-beat-indicator [index]="beat|async" [max]="beatCount()"></bm-beat-indicator>
+    </div>
+  </md-card>
+
+  <md-card class="instrument-list">
+    <div *ngFor="let instrument of machine?.instruments">
+      <bm-instrument-tile [instrument]="instrument">
+      </bm-instrument-tile>
+    </div>
+  </md-card>
 </div>

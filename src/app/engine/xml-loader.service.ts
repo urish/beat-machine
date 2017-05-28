@@ -15,15 +15,17 @@ export class XMLLoaderService {
       flavor: 'Salsa'
     };
 
-    const processors = {
-      bpm: node => machine.bpm = parseInt(node.textContent, 10),
-      keyNote: node => machine.keyNote = parseInt(node.textContent, 10),
-      flavor: node => machine.flavor = node.textContent,
+    const processors: {
+      [key: string]: (node: Element) => any
+    } = {
+      bpm: node => machine.bpm = parseInt(node.textContent!, 10),
+      keyNote: node => machine.keyNote = parseInt(node.textContent!, 10),
+      flavor: node => machine.flavor = node.textContent as any,
       instrumentList: node => machine.instruments = this.processInstrumentList(node)
     };
 
     this.childElements(machineElement).forEach(element => {
-      const processor = processors[element.localName];
+      const processor = processors[element.localName!];
       if (processor && (element.namespaceURI === this.NS_BEAT_MACHINE)) {
         processor(element);
       }
@@ -34,14 +36,14 @@ export class XMLLoaderService {
   public loadInstrument(element: Element): IInstrument {
     const children = this.childElements(element).filter(node => node.namespaceURI === this.NS_INSTRUMENTS);
 
-    function childValue(name, defaultValue) {
+    function childValue(name: string, defaultValue: string): string {
       const child = children.filter(candidate => candidate.localName === name)[0];
-      return child ? child.textContent : defaultValue;
+      return child && child.textContent ? child.textContent : defaultValue;
     }
 
     const result: IInstrument = {
-      id: element.localName.toLowerCase(),
-      title: element.getAttribute('title'),
+      id: (element.localName || '').toLowerCase(),
+      title: element.getAttribute('title') || '',
       enabled: childValue('enabled', 'false') === 'true',
       activeProgram: parseInt(childValue('activeProgram', '0'), 10),
       programs: [],
@@ -66,14 +68,14 @@ export class XMLLoaderService {
 
   loadProgram(element: Element): IProgram {
     return {
-      title: element.getAttribute('title'),
-      length: parseInt(element.getAttribute('length'), 10) || 0,
+      title: element.getAttribute('title') || '',
+      length: parseInt(element.getAttribute('length')!, 10) || 0,
       notes: this.childElements(element)
         .filter(node => (node.namespaceURI === this.NS_BEAT_MACHINE) && (node.localName === 'Note'))
         .map(noteElement => ({
-          index: parseInt(noteElement.getAttribute('index'), 10) || 0,
-          pitch: parseInt(noteElement.getAttribute('pitch'), 10) || 0,
-          velocity: parseFloat(noteElement.getAttribute('velocity')) || null
+          index: parseInt(noteElement.getAttribute('index')!, 10) || 0,
+          pitch: parseInt(noteElement.getAttribute('pitch')!, 10) || 0,
+          velocity: parseFloat(noteElement.getAttribute('velocity')!) || undefined
         }))
     };
   }
@@ -84,8 +86,8 @@ export class XMLLoaderService {
       .map(node => this.loadInstrument(node));
   }
 
-  private childElements(node: Node) {
-    return Array.prototype.concat.apply([], node.childNodes)
+  private childElements(node: Node): Element[] {
+    return (Array.prototype.concat.apply([], node.childNodes) as Element[])
       .filter(candidate => candidate.nodeType === Node.ELEMENT_NODE);
   }
 }

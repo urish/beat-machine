@@ -1,4 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+
 import { IMachine, IInstrument } from './machine-interfaces';
 import { INoteSpec } from './beat-engine.service';
 import { AudioBackendService, InstrumentPlayer, PropertyWatcher } from './audio-backend.service';
@@ -13,10 +16,11 @@ export interface INoteSpec {
 export class BeatEngineService {
   private nextBeatIndex: number;
 
-  private interval: number;
-  private beatTimer: number;
-  private instrumentPlayers;
+  private interval: number | null;
+  private animationFrameRequest: number | null;
+  private instrumentPlayers: { [key: string]: InstrumentPlayer };
   private _machine: IMachine;
+  private _beatSubject = new Subject<number>();
 
   constructor(private zone: NgZone, private mixer: AudioBackendService) {
     this.mixer.init();
@@ -39,7 +43,9 @@ export class BeatEngineService {
         new PropertyWatcher(this.machine, 'bpm')
           .register(newValue => {
             if (this.playing) {
-              clearTimeout(this.interval);
+              if (this.interval) {
+                clearTimeout(this.interval);
+              }
               this.stopAllInstruments();
               this.mixer.reset();
               this.nextBeatIndex = 0;
@@ -61,7 +67,9 @@ export class BeatEngineService {
 
   public start() {
     this.scheduleBuffers();
-    this.beatTick();
+    this.zone.runOutsideAngular(() => {
+      this.beatTick();
+    });
   }
 
   private scheduleBuffers() {
@@ -149,10 +157,14 @@ export class BeatEngineService {
   }
 
   public stop() {
-    clearTimeout(this.interval);
-    this.interval = null;
-    clearTimeout(this.beatTimer);
-    this.beatTimer = null;
+    if (this.interval) {
+      clearTimeout(this.interval);
+      this.interval = null;
+    }
+    if (this.animationFrameRequest) {
+      cancelAnimationFrame(this.animationFrameRequest);
+      this.animationFrameRequest = null;
+    }
     this.stopAllInstruments();
     this.mixer.reset();
     this.nextBeatIndex = 0;
@@ -160,6 +172,10 @@ export class BeatEngineService {
 
   get playing() {
     return this.interval != null;
+  }
+
+  get beat(): Observable<number> {
+    return this._beatSubject;
   }
 
   get beatTime() {
@@ -176,7 +192,7 @@ export class BeatEngineService {
   }
 
   private beatTick() {
-    // This timer will cause angular change detection, and therefore update the beat display
-    this.beatTimer = setTimeout(() => this.beatTick(), this.timeToNextBeat());
+    this._beatSubject.next(this.getBeatIndex());
+    this.animationFrameRequest = requestAnimationFrame(() => this.beatTick());
   }
 }

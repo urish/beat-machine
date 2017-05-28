@@ -2,3 +2,9 @@
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+body {
+  background: black;
+  background-image: url(assets/images/background.jpg);
+  background-size: cover;
+}

@@ -10,11 +10,13 @@ import 'hammerjs';
 import { EngineModule } from './engine/engine.module';
 import { AppComponent } from './app.component';
 import { BeatIndicatorComponent } from './beat-indicator/beat-indicator.component';
+import { InstrumentTileComponent } from './instrument-tile/instrument-tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BeatIndicatorComponent,
+    InstrumentTileComponent,
   ],
   imports: [
     BrowserModule,

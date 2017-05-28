@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.thumbnail {
+  background: no-repeat 50% 50%;
+  background-size: contain;
+  width: 64px;
+  height: 64px;
+}
+
+.thumbnail.disabled {
+  filter: sepia();
+}
+
+.main {
+  display: flex;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 64px;
+  height: 80px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+md-slider {
+  min-height: 0;
+}
