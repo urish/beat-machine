@@ -9,6 +9,7 @@ import { dance } from './moves';
   styleUrls: ['./robot-connector.component.css']
 })
 export class RobotConnectorComponent implements OnInit {
+  connected = false;
 
   constructor(
     private purpleEye: PurpleEyeService,
@@ -20,6 +21,7 @@ export class RobotConnectorComponent implements OnInit {
 
   async connectRobot() {
     await this.purpleEye.connect();
+    this.connected = true;
     this.engine.beat
       .map(beat => Math.floor((beat + 0.25) % 8) + 1)
       .distinctUntilChanged()
