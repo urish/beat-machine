@@ -14,6 +14,7 @@ import { InstrumentTileComponent } from './instrument-tile/instrument-tile.compo
 import { RobotConnectorComponent } from './robot-connector/robot-connector.component';
 import { MagicBlueService } from './magic-blue.service';
 import { PurpleEyeService } from './purple-eye.service';
+import { MipService } from './mip.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PurpleEyeService } from './purple-eye.service';
   ],
   providers: [
     MagicBlueService,
-    PurpleEyeService
+    PurpleEyeService,
+    MipService
   ],
   bootstrap: [AppComponent]
 })
