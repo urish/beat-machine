@@ -1,5 +1,3 @@
-console.log('new colors2');
-
 export function dance(beat: number) {
   switch (beat) {
     case 1: return [90 - 20, 90, 90, 90 - 20];
