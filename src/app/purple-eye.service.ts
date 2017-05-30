@@ -1,5 +1,3 @@
-/// <reference types="web-bluetooth" />
-
 import { Injectable } from '@angular/core';
 
 @Injectable()

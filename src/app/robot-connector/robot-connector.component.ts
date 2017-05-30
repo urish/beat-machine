@@ -4,8 +4,6 @@ import { BeatEngineService } from './../engine/beat-engine.service';
 import { PurpleEyeService } from './../purple-eye.service';
 import { dance, animateBulb } from './moves';
 
-declare var require: any;
-
 @Component({
   selector: 'bm-robot-connector',
   templateUrl: './robot-connector.component.html',
@@ -21,9 +19,9 @@ export class RobotConnectorComponent implements OnInit {
     private magicBulb: MagicBlueService,
     private engine: BeatEngineService,
   ) {
-    (module as any).hot.accept('./moves.ts', () => {
+    module.hot.accept('./moves.ts', () => {
       console.log('moves reload!');
-      const { dance, animateBulb } = require('./moves.ts');
+      const { dance, animateBulb } = require('./moves.ts') as any;
       this.danceFn = dance;
       this.bulbFn = animateBulb;
     });
