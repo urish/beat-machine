@@ -1,3 +1,4 @@
+import { MagicBlueService } from './../magic-blue.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { BeatEngineService } from './../engine/beat-engine.service';
 import { PurpleEyeService } from './../purple-eye.service';
@@ -13,6 +14,7 @@ export class RobotConnectorComponent implements OnInit {
 
   constructor(
     private purpleEye: PurpleEyeService,
+    private magicBulb: MagicBlueService,
     private engine: BeatEngineService,
   ) { }
 
@@ -31,4 +33,17 @@ export class RobotConnectorComponent implements OnInit {
       });
   }
 
+  async connectBulb() {
+    await this.magicBulb.connect();
+    this.engine.beat
+      .map(beat => Math.floor((beat + 0.25)))
+      .distinctUntilChanged()
+      .subscribe(beat => {
+        if (beat % 2) {
+          this.magicBulb.setColor(255, 0, 0);
+        } else {
+          this.magicBulb.setColor(0, 255, 0);
+        }
+      });
+  }
 }
