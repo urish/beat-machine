@@ -1,0 +1,5 @@
+Images Copyright (C) 2017, CodeMagic LTD
+
+The instrument images in this folder are licensed to use within the Salsa Beat Machine only. They may be redistributed with any copy of the Salsa Beat Machine, as long as this notice is retained.
+
+If you intend to use them for a different purpose, you first need to get an explicit, written permission from the authors.
