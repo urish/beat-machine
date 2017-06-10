@@ -12,7 +12,7 @@
 }
 
 .thumbnail.disabled {
-  filter: sepia();
+  filter: url(#gray-overlay);
 }
 
 .main {

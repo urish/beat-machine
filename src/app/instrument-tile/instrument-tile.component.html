@@ -1,6 +1,5 @@
 <div class="top">
-    <md-select [ngModel]="instrument.activeProgram + 1"
-      (change)="instrument.activeProgram = $event.value-1">
+  <md-select [ngModel]="instrument.activeProgram + 1" (change)="instrument.activeProgram = $event.value-1">
     <md-option *ngFor="let p of instrument.programs; let i = index" [value]="i + 1">
       {{p.title}}
     </md-option>
@@ -8,8 +7,7 @@
 </div>
 <div class="main">
   <div class="left" (click)="toggle()">
-    <div class="thumbnail" [class.disabled]="!instrument.enabled"
-      [style.background-image]="'url(assets/instruments/'+instrument.id+'.svg)'">
+    <div class="thumbnail" [class.disabled]="!instrument.enabled" [style.background-image]="'url(assets/instruments/'+instrument.id+'.svg)'">
     </div>
     <span>
       {{instrument.title}}
@@ -17,3 +15,10 @@
   </div>
   <md-slider [(ngModel)]="instrument.volume" vertical min="0" max="1.0" step="0.1"></md-slider>
 </div>
+<!-- filter is used by CSS to draw disabled instruments -->
+<svg height="0" width="0">
+  <filter id="gray-overlay">
+    <feFlood id="gray-overlay-flood" flood-color="rgb(104,104,104)" />
+    <feComposite in2="SourceAlpha" operator="in" k1="-8.8" />
+  </filter>
+</svg>
