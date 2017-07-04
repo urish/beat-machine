@@ -7,6 +7,12 @@ h1 {
   margin-bottom: 12px;
 }
 
+@media(max-width: 640px) {
+  h1 {
+      font-size: 6vw;
+  }
+}
+
 .app-container {
   max-width: 680px;
   margin: 0 auto;
