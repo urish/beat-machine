@@ -1,5 +1,5 @@
 <h1>
-  Salsa Beat Machine 5
+  The Salsa Beat Machine
 </h1>
 
 <md-spinner *ngIf="!machine"></md-spinner>
@@ -30,7 +30,7 @@
       </md-select>
       <md-checkbox [(ngModel)]="merengueEnabled"><label>Merengue</label></md-checkbox>
     </div>
-    <div>
+    <div class="controls-indicator">
       <bm-beat-indicator [index]="beat|async" [max]="beatCount()"></bm-beat-indicator>
     </div>
   </md-card>

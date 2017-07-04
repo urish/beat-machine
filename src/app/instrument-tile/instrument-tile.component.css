@@ -2,13 +2,16 @@
   display: flex;
   flex-direction: column;
   font-size: 12px;
+  width: 112px;
 }
 
 .thumbnail {
+  cursor: pointer;
   background: no-repeat 50% 50%;
   background-size: contain;
-  width: 64px;
-  height: 64px;
+  width: 96px;
+  height: 88px;
+  margin-bottom: 8px;
 }
 
 .thumbnail.disabled {
@@ -17,18 +20,40 @@
 
 .main {
   display: flex;
+  position: relative;
 }
 
-.left {
-  display: flex;
-  flex-direction: column;
+.bottom {
+  font-size: 18px;
+  height: 40px;
   width: 64px;
-  height: 80px;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 md-slider {
   min-height: 0;
+}
+
+.tools {
+  background: rgba(255, 255, 255, 0.5);
+  bottom: 0;
+}
+
+.tools md-icon.active {
+  color: blue;
+}
+
+.instrument-label,
+.tools {
+  opacity: 0;
+  transition: opacity ease 0.3s;
+  text-align: center;
+}
+
+:host:hover .instrument-label,
+:host:hover .tools {
+  opacity: 1;
+}
+
+md-slider {
+  margin-top: -8px;
 }

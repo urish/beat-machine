@@ -1,9 +1,10 @@
 h1 {
   text-align: center;
-  font-size: 20px;
+  font-size: 48px;
   color: #aaa;
-  font-family: cursive;
+  font-family: 'Merriweather', serif;
   font-weight: normal;
+  margin-bottom: 12px;
 }
 
 .app-container {
@@ -21,6 +22,11 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.controls-indicator {
+  margin-top: 8px;
+  text-align: center;
 }
 
 md-card {

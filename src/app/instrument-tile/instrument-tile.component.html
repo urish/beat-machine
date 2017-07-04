@@ -1,20 +1,24 @@
-<div class="top">
-  <md-select [ngModel]="instrument.activeProgram + 1" (change)="instrument.activeProgram = $event.value-1">
-    <md-option *ngFor="let p of instrument.programs; let i = index" [value]="i + 1">
-      {{p.title}}
-    </md-option>
-  </md-select>
-</div>
-<div class="main">
-  <div class="left" (click)="toggle()">
-    <div class="thumbnail" [class.disabled]="!instrument.enabled" [style.background-image]="'url(assets/instruments/'+instrument.id+'.svg)'">
-    </div>
-    <span>
-      {{instrument.title}}
-    </span>
+<div class="main" [title]="instrument.title">
+  <div class="thumbnail" (click)="toggle()" [class.disabled]="!instrument.enabled" [style.background-image]="'url(assets/instruments/'+instrument.id+'.svg)'">
   </div>
-  <md-slider [(ngModel)]="instrument.volume" vertical min="0" max="1.0" step="0.1"></md-slider>
+  <div class="tools">
+    <button md-icon-button (click)="showSettings = !showSettings; showVolume = false">
+    <md-icon [class.active]="showSettings">settings</md-icon>
+  </button>
+    <button md-icon-button (click)="showVolume = !showVolume; showSettings = false">
+    <md-icon [class.active]="showVolume">volume_up</md-icon>
+  </button>
+  </div>
 </div>
+<div class="bottom instrument-label" *ngIf="showTitle">
+  {{instrument.title}}
+</div>
+<md-slider [(ngModel)]="instrument.volume" min="0" max="1.0" step="0.1" *ngIf="showVolume"></md-slider>
+<md-select [ngModel]="instrument.activeProgram + 1" (change)="instrument.activeProgram = $event.value-1" *ngIf="showSettings">
+  <md-option *ngFor="let p of instrument.programs; let i = index" [value]="i + 1">
+    {{p.title}}
+  </md-option>
+</md-select>
 <!-- filter is used by CSS to draw disabled instruments -->
 <svg height="0" width="0">
   <filter id="gray-overlay">

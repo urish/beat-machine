@@ -8,6 +8,9 @@ import { IInstrument } from './../engine/machine-interfaces';
 })
 export class InstrumentTileComponent implements OnInit {
   @Input() instrument: IInstrument;
+  showVolume = false;
+  showSettings = false;
+
   private previousVolume = 0;
 
   constructor() { }
@@ -23,5 +26,9 @@ export class InstrumentTileComponent implements OnInit {
       this.instrument.volume = this.previousVolume;
     }
     this.instrument.enabled = !this.instrument.enabled;
+  }
+
+  get showTitle() {
+    return !this.showSettings && !this.showVolume;
   }
 }
