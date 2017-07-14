@@ -9,7 +9,8 @@ Built with [Angular](https://angular.io).
 ## Local development
 
 1. Download the following files and place them in `src/assets/audio`:
-   * [main.wav](https://beat-machine.firebaseapp.com/assets/audio/main.wav) 
+   * [main.webm](https://beat-machine.firebaseapp.com/assets/audio/main.webm) 
+   * [main.mp3](https://beat-machine.firebaseapp.com/assets/audio/main.mp3) 
    * [main.json](https://beat-machine.firebaseapp.com/assets/audio/main.json)
 
 2. Run:
