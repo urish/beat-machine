@@ -99,7 +99,8 @@ export class AudioBackendService {
 
   constructor(private http: Http) {
     this.ready = false;
-    this.loadBank('assets/audio/main.wav');
+    const hasWebM = MediaSource && MediaSource.isTypeSupported('audio/webm;codecs="vorbis"');
+    this.loadBank(hasWebM ? 'assets/audio/main.webm' : 'assets/audio/main.mp3');
     this.loadBankDescriptor('assets/audio/main.json');
   }
 
