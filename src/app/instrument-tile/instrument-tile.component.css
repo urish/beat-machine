@@ -29,7 +29,7 @@
   width: 64px;
 }
 
-md-slider {
+mat-slider {
   min-height: 0;
 }
 
@@ -38,7 +38,7 @@ md-slider {
   bottom: 0;
 }
 
-.tools md-icon.active {
+.tools mat-icon.active {
   color: blue;
 }
 
@@ -54,6 +54,6 @@ md-slider {
   opacity: 1;
 }
 
-md-slider {
+mat-slider {
   margin-top: -8px;
 }

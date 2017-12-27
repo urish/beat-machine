@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, ResponseContentType } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/observable/fromPromise';
+import { mergeMap } from 'rxjs/operators';
+import { fromPromise } from 'rxjs/observable/fromPromise';
 
 import { IInstrument } from './machine-interfaces';
 
@@ -113,8 +113,9 @@ export class AudioBackendService {
   }
 
   private loadBank(url: string) {
-    this.http.get(url, { responseType: ResponseContentType.ArrayBuffer })
-      .mergeMap(result => Observable.fromPromise(this.context.decodeAudioData(result.arrayBuffer())))
+    this.http.get(url, { responseType: ResponseContentType.ArrayBuffer }).pipe(
+      mergeMap(result => fromPromise(this.context.decodeAudioData(result.arrayBuffer())))
+    )
       .subscribe(buffer => {
         this.buffer = buffer;
         this.ready = true;

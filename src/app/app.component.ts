@@ -1,8 +1,7 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/distinctUntilChanged';
+import { tap, map, distinctUntilChanged } from 'rxjs/operators';
 
 import { BeatEngineService } from './engine/beat-engine.service';
 import { IMachine } from './engine/machine-interfaces';
@@ -18,16 +17,17 @@ export class AppComponent {
   salsaMachine: IMachine;
   merengueMachine: IMachine;
 
-  beat: Observable<number> = this.engine.beat
-    .map((beatIndex) => {
+  beat: Observable<number> = this.engine.beat.pipe(
+    map((beatIndex) => {
       beatIndex = this.engine.playing ? Math.round((0.5 + beatIndex % 8)) : 0;
       if (this.machine.flavor === 'Merengue') {
         beatIndex = Math.round(beatIndex / 2);
       }
       return beatIndex;
-    })
-    .distinctUntilChanged()
-    .do(() => setTimeout(() => this.cd.detectChanges(), 0));
+    }),
+    distinctUntilChanged(),
+    tap(() => setTimeout(() => this.cd.detectChanges(), 0)),
+  );
 
   constructor(http: Http, loader: XMLLoaderService, private cd: ChangeDetectorRef,
     public engine: BeatEngineService) {
