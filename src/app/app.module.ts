@@ -8,8 +8,6 @@ import {
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import 'hammerjs';
-
 import { EngineModule } from './engine/engine.module';
 import { AppComponent } from './app.component';
 import { BeatIndicatorComponent } from './beat-indicator/beat-indicator.component';
