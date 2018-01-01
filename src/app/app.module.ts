@@ -20,7 +20,7 @@ import { InstrumentTileComponent } from './instrument-tile/instrument-tile.compo
     InstrumentTileComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'beat-machine'}),
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,

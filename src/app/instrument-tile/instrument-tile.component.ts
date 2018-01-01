@@ -3,8 +3,8 @@ import { IInstrument } from './../engine/machine-interfaces';
 
 @Component({
   selector: 'bm-instrument-tile',
-  templateUrl: './instrument-tile.component.html',
-  styleUrls: ['./instrument-tile.component.css']
+  templateUrl: '/app/instrument-tile/instrument-tile.component.html',
+  styleUrls: ['/app/instrument-tile/instrument-tile.component.css']
 })
 export class InstrumentTileComponent implements OnInit {
   @Input() instrument: IInstrument;

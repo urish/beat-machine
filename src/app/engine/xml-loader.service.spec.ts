@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { XmlLoaderService } from './xml-loader.service';
+import { XMLLoaderService } from './xml-loader.service';
 
 describe('XmlLoaderService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [XmlLoaderService]
+      providers: [XMLLoaderService]
     });
   });
 
-  it('should ...', inject([XmlLoaderService], (service: XmlLoaderService) => {
+  it('should ...', inject([XMLLoaderService], (service: XMLLoaderService) => {
     expect(service).toBeTruthy();
   }));
 });

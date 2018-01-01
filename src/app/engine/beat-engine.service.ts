@@ -16,7 +16,7 @@ export interface INoteSpec {
 export class BeatEngineService {
   private nextBeatIndex: number;
 
-  private interval: number | null;
+  private interval: NodeJS.Timer | null;
   private animationFrameRequest: number | null;
   private instrumentPlayers: { [key: string]: InstrumentPlayer };
   private _machine: IMachine;
