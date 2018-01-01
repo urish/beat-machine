@@ -43,3 +43,22 @@ mat-card {
 bm-instrument-tile {
   margin-bottom: 12px;
 }
+
+.mobile-links {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.mobile-links a {
+  display: inline-block;
+  background: transparent url(/assets/images/mobile-icons.jpg) no-repeat -5px -25px;
+  text-indent: -1000px;
+  overflow: hidden;
+  width: 72px;
+  height: 72px;
+}
+
+.mobile-links a.android {
+  background-position: -5px -180px;
+  margin-right: 16px;
+}

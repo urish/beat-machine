@@ -2,6 +2,15 @@
   The Salsa Beat Machine
 </h1>
 
+<div class="mobile-links">
+  <a href="https://play.google.com/store/apps/details?id=com.salsarhythm" class="android" target="_blank">
+    Android
+  </a>
+  <a href="https://itunes.apple.com/us/app/salsa-rhythm-the-latin-dance-practice-tool/id379868541" class="ios" target="_blank">
+    iOS
+  </a>
+</div>
+
 <mat-spinner *ngIf="!machine"></mat-spinner>
 
 <div *ngIf="machine" (keydown)="onKeyDown($event)" class="app-container">
