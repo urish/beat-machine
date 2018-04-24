@@ -15,7 +15,9 @@ Built with [Angular](https://angular.io).
 
 2. Run:
 
-    npm install
-    npm start
+```shell
+npm install
+npm start
+```
 
-Then go to http://localhost:4200/
+Then go to http://localhost:4200/ and start hacking!
