@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, ResponseContentType } from '@angular/http';
-import { Observable, Subject, from as fromPromise } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 
 import { IInstrument } from './machine-interfaces';
@@ -18,10 +18,10 @@ export class PropertyWatcher<T> {
     this.watchers = [];
     Object.defineProperty(obj, propertyName, {
       get: () => this.value,
-      set: newValue => {
+      set: (newValue) => {
         this.value = newValue;
-        this.watchers.forEach(watcher => watcher(newValue));
-      }
+        this.watchers.forEach((watcher) => watcher(newValue));
+      },
     });
   }
 
@@ -35,7 +35,7 @@ export class InstrumentPlayer {
   private volume: number;
   private enabled: boolean;
   private gainMap: {
-    [velocity: number]: GainNode
+    [velocity: number]: GainNode;
   };
 
   onChange = new Subject();
@@ -43,13 +43,13 @@ export class InstrumentPlayer {
   constructor(private context: AudioContext, private instrument: IInstrument) {
     this.reset();
 
-    new PropertyWatcher<number>(instrument, 'volume').register(newValue => {
+    new PropertyWatcher<number>(instrument, 'volume').register((newValue) => {
       if (instrument.enabled) {
         this.gain.gain.value = newValue;
       }
     });
 
-    new PropertyWatcher<boolean>(instrument, 'enabled').register(enabled => {
+    new PropertyWatcher<boolean>(instrument, 'enabled').register((enabled) => {
       if (enabled) {
         this.onChange.next();
       } else {
@@ -57,7 +57,7 @@ export class InstrumentPlayer {
       }
     });
 
-    new PropertyWatcher<string>(instrument, 'activeProgram').register(activeProgram => {
+    new PropertyWatcher<string>(instrument, 'activeProgram').register((activeProgram) => {
       this.onChange.next();
     });
   }
@@ -88,14 +88,13 @@ export class InstrumentPlayer {
 
 @Injectable()
 export class AudioBackendService {
-
   public ready: boolean;
   private buffer: AudioBuffer;
   private bankDescriptor: BankDescriptor;
   private zeroTime: number | null = null;
   private _context: AudioContext;
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     this.ready = false;
     const hasWebM = MediaSource && MediaSource.isTypeSupported('audio/webm;codecs="vorbis"');
     this.loadBank(hasWebM ? 'assets/audio/main.webm' : 'assets/audio/main.mp3');
@@ -111,20 +110,19 @@ export class AudioBackendService {
   }
 
   private loadBank(url: string) {
-    this.http.get(url, { responseType: ResponseContentType.ArrayBuffer }).pipe(
-      mergeMap(result => fromPromise(this.context.decodeAudioData(result.arrayBuffer())))
-    )
-      .subscribe(buffer => {
+    this.http
+      .get(url, { responseType: 'arraybuffer' })
+      .pipe(mergeMap((result) => this.context.decodeAudioData(result)))
+      .subscribe((buffer) => {
         this.buffer = buffer;
         this.ready = true;
       });
   }
 
   private loadBankDescriptor(url: string) {
-    this.http.get(url)
-      .subscribe(response => {
-        this.bankDescriptor = response.json();
-      });
+    this.http.get<BankDescriptor>(url).subscribe((response) => {
+      this.bankDescriptor = response;
+    });
   }
 
   play(sampleName: string, player: InstrumentPlayer, when: number, velocity?: number) {

@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap, map, distinctUntilChanged } from 'rxjs/operators';
 
@@ -29,15 +29,15 @@ export class AppComponent {
     tap(() => setTimeout(() => this.cd.detectChanges(), 0)),
   );
 
-  constructor(http: Http, loader: XMLLoaderService, private cd: ChangeDetectorRef,
+  constructor(http: HttpClient, loader: XMLLoaderService, private cd: ChangeDetectorRef,
     public engine: BeatEngineService) {
-    http.get('assets/salsa.xml').subscribe(value => {
-      const xml = (new DOMParser()).parseFromString(value.text(), 'text/xml');
+    http.get('assets/salsa.xml', { responseType: 'text' }).subscribe(value => {
+      const xml = (new DOMParser()).parseFromString(value, 'text/xml');
       this.salsaMachine = loader.loadMachine(xml);
       engine.machine = this.salsaMachine;
     });
-    http.get('assets/merengue.xml').subscribe(value => {
-      const xml = (new DOMParser()).parseFromString(value.text(), 'text/xml');
+    http.get('assets/merengue.xml', { responseType: 'text' }).subscribe(value => {
+      const xml = (new DOMParser()).parseFromString(value, 'text/xml');
       this.merengueMachine = loader.loadMachine(xml);
     });
   }

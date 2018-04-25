@@ -173,12 +173,6 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/http@6.0.0-rc.5":
-  version "6.0.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@angular/http/-/http-6.0.0-rc.5.tgz#40dad79b77d463bd325263020e79e9512dc085eb"
-  dependencies:
-    tslib "^1.9.0"
-
 "@angular/material@6.0.0-rc.12":
   version "6.0.0-rc.12"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-6.0.0-rc.12.tgz#2342b0e6c7a9ad5cd18d046ee444cd6f1b5482bc"
@@ -6863,7 +6857,7 @@ rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
 
-rxjs@^6.0.0-beta.3, rxjs@^6.0.0-turbo-rc.4, rxjs@6.0.0:
+rxjs@6.0.0, rxjs@^6.0.0-beta.3, rxjs@^6.0.0-turbo-rc.4:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.0.0.tgz#d647e029b5854617f994c82fe57a4c6747b352da"
   dependencies:
