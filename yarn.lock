@@ -6863,19 +6863,9 @@ rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
 
-rxjs-compat@^6.0.0-rc.0:
-  version "6.0.0-uncanny-rc.7"
-  resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.0.0-uncanny-rc.7.tgz#4d9d88c2296aefda6b6503a52c27d1bf7e6ff1f0"
-
-rxjs@6.0.0:
+rxjs@^6.0.0-beta.3, rxjs@^6.0.0-turbo-rc.4, rxjs@6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.0.0.tgz#d647e029b5854617f994c82fe57a4c6747b352da"
-  dependencies:
-    tslib "^1.9.0"
-
-rxjs@^6.0.0-beta.3, rxjs@^6.0.0-turbo-rc.4:
-  version "6.0.0-uncanny-rc.7"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.0.0-uncanny-rc.7.tgz#e5d6ebe2c538c583bf4b3600b60112d64a7a6991"
   dependencies:
     tslib "^1.9.0"
 

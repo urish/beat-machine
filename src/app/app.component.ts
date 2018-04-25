@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { tap, map, distinctUntilChanged } from 'rxjs/operators';
 
 import { BeatEngineService } from './engine/beat-engine.service';

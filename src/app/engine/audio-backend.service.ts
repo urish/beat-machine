@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, ResponseContentType } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable, Subject, from as fromPromise } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
-import { fromPromise } from 'rxjs/observable/fromPromise';
 
 import { IInstrument } from './machine-interfaces';
 
