@@ -14,7 +14,7 @@
   {{instrument.title}}
 </div>
 <mat-slider [(ngModel)]="instrument.volume" min="0" max="1.0" step="0.1" *ngIf="showVolume"></mat-slider>
-<mat-select [ngModel]="instrument.activeProgram + 1" (change)="instrument.activeProgram = $event.value-1" *ngIf="showSettings">
+<mat-select [value]="instrument.activeProgram + 1" (selectionChange)="instrument.activeProgram = $event.value-1" *ngIf="showSettings">
   <mat-option *ngFor="let p of instrument.programs; let i = index" [value]="i + 1">
     {{p.title}}
   </mat-option>
