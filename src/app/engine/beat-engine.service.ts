@@ -65,6 +65,7 @@ export class BeatEngineService {
   }
 
   public start() {
+    this.mixer.context.resume();
     this.scheduleBuffers();
     this.zone.runOutsideAngular(() => {
       this.beatTick();
