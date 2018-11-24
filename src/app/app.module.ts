@@ -12,6 +12,8 @@ import { EngineModule } from './engine/engine.module';
 import { AppComponent } from './app.component';
 import { BeatIndicatorComponent } from './beat-indicator/beat-indicator.component';
 import { InstrumentTileComponent } from './instrument-tile/instrument-tile.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { InstrumentTileComponent } from './instrument-tile/instrument-tile.compo
     MatCheckboxModule,
     MatButtonModule,
     EngineModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
