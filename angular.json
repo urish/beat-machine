@@ -107,7 +107,7 @@
       }
     },
     "beat-machine-e2e": {
-      "root": "",
+      "root": "e2e/",
       "projectType": "application",
       "cli": {},
       "schematics": {},
