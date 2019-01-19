@@ -55,6 +55,20 @@
 					<bm:Note index="0" pitch="0" />
 					<bm:Note index="2" pitch="0" />
 				</bm:Program>
+        <bm:Program length="4" title="Caballo">
+          <bm:Note index='2' pitch='0' velocity='0.4' />
+          <bm:Note index='3' pitch='0' velocity='0.4' />
+        </bm:Program>
+        <bm:Program length="16" title="Caballo Complex">
+          <bm:Note index='2' pitch='0' velocity='0.4' />
+          <bm:Note index='3' pitch='0' velocity='0.4' />
+          <bm:Note index='6' pitch='0' velocity='0.4' />
+          <bm:Note index='7' pitch='0' velocity='0.4' />
+          <bm:Note index='10' pitch='0' velocity='0.4' />
+          <bm:Note index='11' pitch='0' velocity='0.4' />
+          <bm:Note index='13' pitch='0' />
+          <bm:Note index='15' pitch='0' />
+        </bm:Program>
 			</programs>
 		</Cowbell>		
 		
@@ -138,7 +152,14 @@
 					<bm:Note index='3' pitch='3' />
 					<bm:Note index='6' pitch='4' />
 				</bm:Program>
-				<bm:Program title="Caballo" length="8">
+        <bm:Program title="Caballo Simple" length='8'>
+          <bm:Note index='0' pitch='2' />
+          <bm:Note index='3' pitch='0' />
+          <bm:Note index='4' pitch='2' />
+          <bm:Note index='6' pitch='3' />
+          <bm:Note index='7' pitch='0' />
+        </bm:Program>
+				<bm:Program title="Caballo with Rellenos" length="8">
 					<bm:Note index='0' pitch='2' />
 					<bm:Note index='1' pitch='1' />
 					<bm:Note index='2' pitch='1' />
@@ -1054,7 +1075,12 @@
 			<activeProgram>0</activeProgram>
 			<respectsClave>true</respectsClave>
 			<programs>
-				<bm:Program title="Güiro" length='4'>
+        <bm:Program title="Güiro Simple" length='4'>
+          <bm:Note index='0' pitch='1' />
+          <bm:Note index='2' pitch='1' velocity='0.4'/>
+          <bm:Note index='3' pitch='1' velocity='0.4'/>
+        </bm:Program>
+				<bm:Program title="Güiro Son" length='4'>
 					<bm:Note index='0' pitch='0' />
 					<bm:Note index='2' pitch='1' />
 					<bm:Note index='3' pitch='1' />
