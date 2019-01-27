@@ -110,13 +110,19 @@ export class AudioBackendService {
   }
 
   private loadBank(url: string) {
+    // on Safari we need to use callbacks using decodeAudioData method.
     this.http
       .get(url, { responseType: 'arraybuffer' })
-      .pipe(mergeMap((result) => this.context.decodeAudioData(result)))
-      .subscribe((buffer) => {
-        this.buffer = buffer;
+      .pipe(mergeMap((result) => new Promise((resolve, reject) => {
+        this.context.decodeAudioData(result, resolve, reject)
+      })))
+      .subscribe(
+        (buffer) => {
+        this.buffer = buffer as any;
         this.ready = true;
-      });
+        },
+        err => console.log(`Error loading bank: ${err}`)
+      );
   }
 
   private loadBankDescriptor(url: string) {
