@@ -96,8 +96,13 @@ export class AudioBackendService {
 
   constructor(private http: HttpClient) {
     this.ready = false;
-    const hasWebM = MediaSource && MediaSource.isTypeSupported('audio/webm;codecs="vorbis"');
-    this.loadBank(hasWebM ? 'assets/audio/main.webm' : 'assets/audio/main.mp3');
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+    let hasWebM;
+    // MediaSource is not supported on iOS
+    if (!isIOS) {
+      hasWebM = MediaSource && MediaSource.isTypeSupported('audio/webm;codecs="vorbis"');
+    }
+    this.loadBank(hasWebM && !isIOS ? 'assets/audio/main.webm' : 'assets/audio/main.mp3');
     this.loadBankDescriptor('assets/audio/main.json');
   }
 
