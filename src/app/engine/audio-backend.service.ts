@@ -32,8 +32,6 @@ export class PropertyWatcher<T> {
 
 export class InstrumentPlayer {
   private gain: GainNode;
-  private volume: number;
-  private enabled: boolean;
   private gainMap: {
     [velocity: number]: GainNode;
   };
@@ -147,7 +145,7 @@ export class AudioBackendService {
   }
 
   getCurrentTime(): number {
-    if (!this.zeroTime) {
+    if (this.zeroTime == null) {
       return 0;
     }
     return this.context.currentTime - this.zeroTime;
