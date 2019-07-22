@@ -40,7 +40,7 @@ export class BeatEngineService {
           this.start();
         }
         new PropertyWatcher(this.machine, 'bpm')
-          .register(newValue => {
+          .register(() => {
             if (this.playing) {
               if (this.interval) {
                 clearTimeout(this.interval);
@@ -53,7 +53,7 @@ export class BeatEngineService {
           });
 
         new PropertyWatcher(this.machine, 'keyNote')
-          .register(newValue => {
+          .register(() => {
             if (this.playing) {
               this.machine.instruments
                 .filter(instrument => instrument.keyedInstrument)
@@ -96,7 +96,7 @@ export class BeatEngineService {
       console.log('Mixer not ready yet');
     }
     this.zone.runOutsideAngular(() => {
-      this.interval = setTimeout(() => this.scheduleBuffers(), 1000);
+      this.interval = window.setTimeout(() => this.scheduleBuffers(), 1000);
     });
   }
 
