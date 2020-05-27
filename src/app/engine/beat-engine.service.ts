@@ -2,7 +2,6 @@ import { Injectable, NgZone } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 
 import { IMachine, IInstrument } from './machine-interfaces';
-import { INoteSpec } from './beat-engine.service';
 import { AudioBackendService, InstrumentPlayer, PropertyWatcher } from './audio-backend.service';
 
 export interface INoteSpec {
