@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  serviceWorker: true,
-  electron: false,
+  serviceWorker: false,
+  electron: true,
 };

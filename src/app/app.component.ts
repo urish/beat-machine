@@ -6,6 +6,7 @@ import { tap, map, distinctUntilChanged } from 'rxjs/operators';
 import { BeatEngineService } from './engine/beat-engine.service';
 import { IMachine } from './engine/machine-interfaces';
 import { XMLLoaderService } from './engine/xml-loader.service';
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'bm-root',
@@ -16,6 +17,7 @@ export class AppComponent {
   lastBeatIndex: number;
   salsaMachine: IMachine;
   merengueMachine: IMachine;
+  readonly electron = environment.electron;
 
   beat: Observable<number> = this.engine.beat.pipe(
     map((beatIndex) => {

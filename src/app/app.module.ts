@@ -37,7 +37,7 @@ import { environment } from '../environments/environment';
     MatCheckboxModule,
     MatButtonModule,
     EngineModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.serviceWorker }),
   ],
   providers: [],
   bootstrap: [AppComponent]
