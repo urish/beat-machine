@@ -944,6 +944,87 @@
 					<bm:Note index='11' pitch='5' length='2' />
 					<bm:Note index='14' pitch='0' length='4 '/>
 				</bm:Program>
+				<bm:Program title="ii-V-I-I" length='32'>
+					<bm:Note index='3' pitch='9' />
+					<bm:Note index='6' pitch='7' />
+					<bm:Note index='11' pitch='2' />
+					<bm:Note index='14' pitch='0' />
+					<bm:Note index='19' pitch='7' />
+					<bm:Note index='22' pitch='12' />
+					<bm:Note index='27' pitch='7' />
+					<bm:Note index='30' pitch='2' />
+				</bm:Program>
+				<bm:Program title="ii-V-I (short)" length='16'>
+					<bm:Note index='3' pitch='-5' length='4' />
+					<bm:Note index='6' pitch='0' length='4' />
+					<bm:Note index='11' pitch='7' length='2' />
+					<bm:Note index='14' pitch='2' length='4 '/>
+				</bm:Program>
+        <bm:Program title="i-iv" length='16'>
+			  	<!-- added to match a piano pattern -->
+					<bm:Note index='3' pitch='8' length='128' />
+					<bm:Note index='6' pitch='7' length='4' />
+					<bm:Note index='11' pitch='2' length='2' />
+					<bm:Note index='14' pitch='0' length='4 '/>
+				</bm:Program>
+				<bm:Program title="I-V-V-I (short)" length='16'>
+	  			<!-- added to match a piano pattern -->
+					<bm:Note index = '3' pitch='0' />
+					<bm:Note index = '6' pitch='7' />
+					<bm:Note index = '11' pitch='7' />
+					<bm:Note index = '14' pitch='0' />
+				</bm:Program>
+				<bm:Program title="I-V-V-I" length='32'>
+			  	<!-- added to match a piano pattern -->
+					<bm:Note index = '3' pitch='9' />
+					<bm:Note index = '6' pitch='7' />
+					<bm:Note index = '11' pitch='2' />
+					<bm:Note index = '14' pitch='-5' />
+					<bm:Note index = '19' pitch='2' />
+					<bm:Note index = '22' pitch='0' />
+					<bm:Note index = '27' pitch='7' />
+					<bm:Note index = '30' pitch='12' />
+				</bm:Program>
+				<bm:Program title="i-V-V-i" length='32'>
+		  		<!-- added to match a piano pattern -->
+					<bm:Note index = '3' pitch='8' />
+					<bm:Note index = '6' pitch='7' />
+					<bm:Note index = '11' pitch='2' />
+					<bm:Note index = '14' pitch='-5' />
+					<bm:Note index = '19' pitch='2' />
+					<bm:Note index = '22' pitch='0' />
+					<bm:Note index = '27' pitch='7' />
+					<bm:Note index = '30' pitch='12' />
+				</bm:Program>
+				<bm:Program title="V-V-I-I" length='32'>
+  				<!-- added to match a piano pattern -->
+					<bm:Note index = '3' pitch='2' />
+					<bm:Note index = '6' pitch='7' />
+					<bm:Note index = '11' pitch='7' />
+					<bm:Note index = '14' pitch='0' />
+					<bm:Note index = '19' pitch='7' />
+					<bm:Note index = '22' pitch='12' />
+					<bm:Note index = '27' pitch='9' />
+					<bm:Note index = '30' pitch='7' />
+				</bm:Program>
+        <bm:Program title="I-IV-ii-V" length='16'>
+				<!-- added to match a piano pattern -->
+					<bm:Note index='3' pitch='5' length='4' />
+					<bm:Note index='6' pitch='2' length='4' />
+					<bm:Note index='11' pitch='7' length='2' />
+					<bm:Note index='14' pitch='0' length='4 '/>
+				</bm:Program>
+				<bm:Program title="i-vii" length='32'>
+				<!-- added to match a piano pattern -->
+					<bm:Note index='3' pitch='7' length='128' />
+					<bm:Note index='6' pitch='0' length='4' />
+					<bm:Note index='11' pitch='-5' length='2' />
+					<bm:Note index='14' pitch='-2' length='4 '/>
+					<bm:Note index='19' pitch='5' length='128' />
+					<bm:Note index='22' pitch='-2' length='4' />
+					<bm:Note index='27' pitch='-5' length='2' />
+					<bm:Note index='30' pitch='0' length='4 '/>
+				</bm:Program>
 				<bm:Program title="Tumbao 5-8-5-1" length='16'>
 					<bm:Note index='3' pitch='7' length='2' />
 					<bm:Note index='6' pitch='12' length='4' />
@@ -983,7 +1064,7 @@
 					<bm:Note index='3' pitch='7' length='2' />
 					<bm:Note index='6' pitch='12' length='4' />
 				</bm:Program>
-				<bm:Program title="Bass from &quot;Aint Nobody&quot; by Alex Wilson" length='32'>
+				<bm:Program title="&quot;Aint Nobody&quot; by Alex Wilson" length='32'>
 					<bm:Note index='3' pitch='7' length='3' />
 					<bm:Note index='6' pitch='0' length='1' />
 					<bm:Note index='8' pitch='2' length='2' />
@@ -995,7 +1076,18 @@
 					<bm:Note index='27' pitch='10' length='2' />
 					<bm:Note index='30' pitch='0' length='4' />
 				</bm:Program>
-				<bm:Program title="El Preso - Bassline" length='32'>
+        <bm:Program title="Abre Que Voy" length='32'>
+        <!-- added to match a piano pattern -->
+          <bm:Note index='3' pitch='7' length='8' />
+          <bm:Note index='6' pitch='8' length='4' />
+          <bm:Note index='11' pitch='5' length='2' />
+          <bm:Note index='14' pitch='10' length='4 '/>
+          <bm:Note index='19' pitch='7' length='8' />
+          <bm:Note index='22' pitch='12' length='4' />
+          <bm:Note index='27' pitch='7' length='2' />
+          <bm:Note index='30' pitch='12' length='4 '/>
+        </bm:Program>
+				<bm:Program title="El Preso" length='32'>
 					<bm:Note index='2' pitch='-1' hand="left" />
 					<bm:Note index='4' pitch='2' hand="left" />
 					<bm:Note index='7' pitch='0' hand="left" />
