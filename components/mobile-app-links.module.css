@@ -1,18 +1,8 @@
 .mobileLinks {
   text-align: center;
-  margin-bottom: 16px;
+  margin: 16px 0 24px;
 }
 
-.mobileLinks a {
-  display: inline-block;
-  background: transparent url(/assets/images/mobile-icons.jpg) no-repeat -5px -25px;
-  text-indent: -1000px;
-  overflow: hidden;
-  width: 72px;
-  height: 72px;
-}
-
-.mobileLinks a.android {
-  background-position: -5px -180px;
-  margin-right: 16px;
+.mobileLinks a:not(:first-child) {
+  margin-left: 16px;
 }

@@ -1,4 +1,6 @@
+import { AppStoreIcon } from './app-store-icon';
 import styles from './mobile-app-links.module.css';
+import { PlayStoreIcon } from './plasy-store-icon';
 
 export function MobileAppLinks() {
   return (
@@ -9,14 +11,14 @@ export function MobileAppLinks() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Android
+        <PlayStoreIcon />
       </a>
       <a
         href="https://itunes.apple.com/us/app/salsa-rhythm-the-latin-dance-practice-tool/id379868541"
         target="_blank"
         rel="noopener noreferrer"
       >
-        iOS
+        <AppStoreIcon />
       </a>
     </div>
   );
