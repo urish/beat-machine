@@ -1,0 +1,14 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap';
+
+body {
+  background: black;
+  background-image: url(../public/assets/images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Roboto, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}

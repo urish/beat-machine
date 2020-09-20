@@ -1,0 +1,14 @@
+.beat {
+  box-sizing: content-box;
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  border-radius: 11px;
+  border: #333 groove 2px;
+  background-color: #400;
+  margin-right: 4px;
+}
+
+.active {
+  background-color: red;
+}
