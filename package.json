@@ -1,11 +1,12 @@
 {
-  "name": "skullctf-site",
-  "version": "0.1.0",
+  "name": "beat-machine",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3009",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
