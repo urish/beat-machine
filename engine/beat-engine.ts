@@ -4,7 +4,7 @@ import { InstrumentPlayer } from './instrument-player';
 import { Machine } from './machine';
 import { IInstrument, IMachine } from './machine-interfaces';
 
-export interface INoteSpec {
+export interface IInstrumentSample {
   beatOffset: number;
   sampleName: string;
   velocity?: number;
@@ -107,8 +107,8 @@ export class BeatEngine {
     }
   }
 
-  private instrumentNotes(instrument: IInstrument, beatIndex: number): INoteSpec[] {
-    const result: INoteSpec[] = [];
+  private instrumentNotes(instrument: IInstrument, beatIndex: number): IInstrumentSample[] {
+    const result: IInstrumentSample[] = [];
     if (instrument.enabled) {
       const program = instrument.programs[instrument.activeProgram];
       beatIndex = beatIndex % (program.length / 2);
