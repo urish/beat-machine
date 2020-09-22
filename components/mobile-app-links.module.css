@@ -1,0 +1,8 @@
+.mobileLinks {
+  text-align: center;
+  margin: 16px 0 24px;
+}
+
+.mobileLinks a:not(:first-child) {
+  margin-left: 16px;
+}
