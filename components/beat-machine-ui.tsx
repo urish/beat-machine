@@ -1,9 +1,7 @@
 import {
   Button,
   ButtonGroup,
-  Checkbox,
   FormControl,
-  FormControlLabel,
   Grid,
   IconButton,
   InputLabel,
@@ -14,33 +12,35 @@ import {
 import PauseIcon from '@material-ui/icons/Pause';
 import PlayIcon from '@material-ui/icons/PlayArrow';
 import classnames from 'classnames';
+import { observable } from 'mobx';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useState } from 'react';
-import { Machine } from '../engine/machine';
+import { IMachine } from '../engine/machine-interfaces';
 import { useBeatEngine } from '../hooks/use-beat-engine';
-import { useMachine } from '../hooks/use-machine';
 import { useWindowListener } from '../hooks/use-window-listener';
 import { BeatIndicator } from './beat-indicator';
 import styles from './beat-machine-ui.module.css';
 import { InstrumentTile } from './instrument-tile';
 
-export const BeatMachineUI = observer(() => {
+export interface IDefaultMachines {
+  salsa: IMachine;
+  merengue: IMachine;
+}
+
+export interface IBeatMachineUIProps {
+  machines: IDefaultMachines;
+}
+
+export const BeatMachineUI = observer(({ machines }: IBeatMachineUIProps) => {
+  const { salsa, merengue } = machines;
   const engine = useBeatEngine();
-  const salsa = useMachine('/assets/machines/salsa.xml');
-  const merengue = useMachine('/assets/machines/merengue.xml');
-  const [machine, setMachine] = useState(new Machine());
+  const [machine, setMachine] = useState(observable(salsa));
 
   useEffect(() => {
     if (engine && machine) {
       engine.machine = machine;
     }
   }, [engine, machine]);
-
-  useEffect(() => {
-    if (salsa) {
-      setMachine(salsa);
-    }
-  }, [salsa]);
 
   const beatCount = machine.flavor === 'Merengue' ? 4 : 8;
   const beatDivider = machine.flavor === 'Merengue' ? 2 : 1;
@@ -118,13 +118,13 @@ export const BeatMachineUI = observer(() => {
             {engine && salsa && merengue && (
               <ButtonGroup variant="text" color="primary" aria-label="Music style">
                 <Button
-                  onClick={() => setMachine(salsa)}
+                  onClick={() => setMachine(observable(salsa))}
                   variant={machine.flavor === 'Salsa' ? 'contained' : undefined}
                 >
                   Salsa
                 </Button>
                 <Button
-                  onClick={() => setMachine(merengue)}
+                  onClick={() => setMachine(observable(merengue))}
                   variant={machine.flavor === 'Merengue' ? 'contained' : undefined}
                 >
                   Merengue

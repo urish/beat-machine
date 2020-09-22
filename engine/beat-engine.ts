@@ -1,7 +1,7 @@
 import { computed, Lambda, observable, observe } from 'mobx';
 import { AudioBackend } from './audio-backend';
 import { InstrumentPlayer } from './instrument-player';
-import { Machine } from './machine';
+import { createMachine } from './machine';
 import { IInstrument, IMachine } from './machine-interfaces';
 
 export interface IInstrumentSample {
@@ -20,7 +20,7 @@ export class BeatEngine {
   private interval: number | null = null;
 
   @observable
-  private _machine: IMachine = new Machine();
+  private _machine: IMachine = createMachine();
 
   @observable
   beat = 0;

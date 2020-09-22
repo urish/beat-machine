@@ -1,13 +1,15 @@
-import { Machine } from './machine';
-import { IMachine, IInstrument, IProgram } from './machine-interfaces';
+import { createMachine } from './machine';
+import { IInstrument, IMachine, IProgram } from './machine-interfaces';
 
 export class MachineXMLLoader {
   private NS_BEAT_MACHINE = 'http://www.salsabeatmachine.org/xns/bm';
   private NS_INSTRUMENTS = 'http://www.salsabeatmachine.org/xns/instruments';
 
+  constructor() {}
+
   loadMachine(xmlDocument: Document): IMachine {
     const machineElement = xmlDocument.getElementsByTagNameNS(this.NS_BEAT_MACHINE, 'Machine')[0];
-    const machine: IMachine = new Machine();
+    const machine: IMachine = createMachine();
 
     const processors: {
       [key: string]: (node: Element) => any;
@@ -80,6 +82,8 @@ export class MachineXMLLoader {
   }
 
   private childElements(node: Node): Element[] {
-    return (Array.from(node.childNodes) as Element[]).filter((candidate) => candidate.nodeType === Node.ELEMENT_NODE);
+    return (Array.from(node.childNodes) as Element[]).filter(
+      (candidate) => candidate.nodeType === candidate.ELEMENT_NODE,
+    );
   }
 }

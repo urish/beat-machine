@@ -1,9 +1,15 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import { BeatMachineUI } from '../components/beat-machine-ui';
+import { BeatMachineUI, IDefaultMachines } from '../components/beat-machine-ui';
 import { MobileAppLinks } from '../components/mobile-app-links';
+import { loadMachine } from '../services/load-machine';
 import styles from './index.module.css';
 
-export default function Home() {
+interface IHomeProps {
+  machines: IDefaultMachines;
+}
+
+export default function Home({ machines }: IHomeProps) {
   return (
     <>
       <Head>
@@ -22,9 +28,19 @@ export default function Home() {
 
         <MobileAppLinks />
         <div className={styles.appContainer}>
-          <BeatMachineUI />
+          <BeatMachineUI machines={machines} />
         </div>
       </div>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
+  const salsa = await loadMachine('salsa.xml');
+  const merengue = await loadMachine('merengue.xml');
+  return {
+    props: {
+      machines: { salsa, merengue },
+    },
+  };
+};
