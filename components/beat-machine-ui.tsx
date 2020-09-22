@@ -43,7 +43,8 @@ export const BeatMachineUI = observer(() => {
   }, [salsa]);
 
   const beatCount = machine.flavor === 'Merengue' ? 4 : 8;
-  const beatIndex = engine?.playing ? Math.round(0.5 + (engine.beat % beatCount)) : 0;
+  const beatDivider = machine.flavor === 'Merengue' ? 2 : 1;
+  const beatIndex = engine?.playing ? Math.round(0.5 + ((engine.beat / beatDivider) % beatCount)) : 0;
 
   useWindowListener(
     'keydown',
