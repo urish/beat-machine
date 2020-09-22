@@ -1,4 +1,4 @@
-import { autorun } from 'mobx';
+import { autorun, IReactionDisposer } from 'mobx';
 import { IInstrument } from './machine-interfaces';
 
 export class InstrumentPlayer {
@@ -6,31 +6,25 @@ export class InstrumentPlayer {
   private gainMap: {
     [velocity: number]: GainNode;
   } = {};
+  private scheduledSamples = new Map<AudioScheduledSourceNode, number>();
+  private disposer: IReactionDisposer;
 
   constructor(private context: AudioContext, private instrument: IInstrument) {
-    this.gainNode = this.createGainNode();
-    this.reset();
+    this.gainNode = context.createGain();
+    this.gainNode.connect(this.context.destination);
 
-    autorun(() => this.updateGain());
+    this.disposer = autorun(() => {
+      this.gainNode.gain.value = this.instrument.enabled ? this.instrument.volume : 0;
+    });
   }
 
-  reset() {
-    if (this.gainNode) {
-      this.gainNode.disconnect();
+  reset(hard = false) {
+    for (const [sample, startTime] of Array.from(this.scheduledSamples.entries())) {
+      if (hard || startTime >= this.context.currentTime) {
+        sample.stop();
+      }
     }
-    this.gainNode = this.createGainNode();
-    this.updateGain();
-    this.gainMap = {};
-  }
-
-  private createGainNode() {
-    const gainNode = this.context.createGain();
-    gainNode.connect(this.context.destination);
-    return gainNode;
-  }
-
-  private updateGain() {
-    this.gainNode.gain.value = this.instrument.enabled ? this.instrument.volume : 0;
+    this.scheduledSamples.clear();
   }
 
   createNoteDestination(velocity?: number): AudioNode {
@@ -44,5 +38,17 @@ export class InstrumentPlayer {
       this.gainMap[velocity] = newNode;
     }
     return this.gainMap[velocity];
+  }
+
+  registerSample(buffer: AudioScheduledSourceNode, startTime: number) {
+    buffer.addEventListener('ended', () => {
+      this.scheduledSamples.delete(buffer);
+    });
+    this.scheduledSamples.set(buffer, startTime);
+  }
+
+  dispose() {
+    this.disposer();
+    this.reset(true);
   }
 }

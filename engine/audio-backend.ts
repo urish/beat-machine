@@ -49,7 +49,9 @@ export class AudioBackend {
     if (this.zeroTime === null) {
       this.zeroTime = this.context!.currentTime;
     }
-    bufferSource.start(this.zeroTime + when, sampleInfo[1] / 44100.0, sampleInfo[2] / 44100.0);
+    const startTime = this.zeroTime + when;
+    bufferSource.start(startTime, sampleInfo[1] / 44100.0, sampleInfo[2] / 44100.0);
+    player.registerSample(bufferSource, startTime);
   }
 
   reset() {

@@ -1,19 +1,20 @@
-import { computed, observable, observe } from 'mobx';
+import { computed, Lambda, observable, observe } from 'mobx';
 import { AudioBackend } from './audio-backend';
 import { InstrumentPlayer } from './instrument-player';
 import { Machine } from './machine';
 import { IInstrument, IMachine } from './machine-interfaces';
 
 export interface IInstrumentSample {
-  beatOffset: number;
   sampleName: string;
   velocity?: number;
 }
 
 export class BeatEngine {
-  private nextBeatIndex = 0;
+  private nextSampleIndex = 0;
   private animationFrameRequest: number | null = null;
-  private instrumentPlayers: { [key: string]: InstrumentPlayer } = {};
+  private audioTimeDelta = 0;
+  private machineDisposers: Lambda[] = [];
+  private readonly instrumentPlayers = new Map<IInstrument, InstrumentPlayer>();
 
   @observable
   private interval: number | null = null;
@@ -26,7 +27,6 @@ export class BeatEngine {
 
   constructor(private mixer: AudioBackend) {
     this.mixer.init();
-    this.instrumentPlayers = {};
   }
 
   get machine() {
@@ -36,32 +36,51 @@ export class BeatEngine {
   set machine(value: IMachine) {
     if (value !== this._machine) {
       this._machine = value;
-      if (this.machine) {
-        if (this.playing) {
-          this.stop();
-          this.play();
-        }
+      this.machineDisposers.forEach((disposer) => disposer());
+      this.machineDisposers = [];
+      for (const player of Array.from(this.instrumentPlayers.values())) {
+        player.dispose();
+      }
+      this.instrumentPlayers.clear();
 
-        observe(this.machine, 'bpm', () => {
+      if (!this.machine) {
+        return;
+      }
+      if (this.playing) {
+        this.stop();
+        this.play();
+      }
+
+      this.machineDisposers.push(
+        observe(this.machine, 'bpm', ({ oldValue, newValue }) => {
           if (this.playing) {
             if (this.interval) {
               clearTimeout(this.interval);
             }
+            const currentAudioTime = this.mixer.getCurrentTime();
+            if (oldValue != null) {
+              this.audioTimeDelta = (currentAudioTime + this.audioTimeDelta) * (oldValue / newValue) - currentAudioTime;
+            }
+            this.nextSampleIndex = Math.ceil(this.getBeatIndex() * 2);
             this.stopAllInstruments();
-            this.mixer.reset();
-            this.nextBeatIndex = 0;
             this.scheduleBuffers();
           }
-        });
+        }),
 
         observe(this.machine, 'keyNote', () => {
           if (this.playing) {
-            this.machine.instruments
-              .filter((instrument) => instrument.keyedInstrument)
-              .map((instrument) => this.rescheduleInstrument(instrument));
+            for (const instrument of this.machine.instruments) {
+              if (!instrument.keyedInstrument) {
+                continue;
+              }
+              const player = this.instrumentPlayers.get(instrument);
+              if (player) {
+                this.rescheduleInstrument(instrument, player);
+              }
+            }
           }
-        });
-      }
+        }),
+      );
     }
   }
 
@@ -71,24 +90,39 @@ export class BeatEngine {
     this.beatTick();
   }
 
+  private getInstrumentPlayer(context: AudioContext, instrument: IInstrument) {
+    const instrumentPlayer = this.instrumentPlayers.get(instrument);
+    if (instrumentPlayer) {
+      return instrumentPlayer;
+    } else {
+      const newPlayer = new InstrumentPlayer(context, instrument);
+      this.machineDisposers.push(
+        observe(instrument, 'activeProgram', () => this.rescheduleInstrument(instrument, newPlayer)),
+      );
+      this.instrumentPlayers.set(instrument, newPlayer);
+      return newPlayer;
+    }
+  }
+
   private scheduleBuffers() {
     const context = this.mixer.context;
     if (context && this.mixer.ready) {
-      const beatTime = this.beatTime;
-      while (this.nextBeatIndex - this.getBeatIndex() < 32) {
-        const beatIndex = this.nextBeatIndex;
+      const sampleTime = this.beatTime / 2;
+      const currentBeat = this.getBeatIndex();
+      while (this.nextSampleIndex - currentBeat * 2 < 64) {
+        const sampleIndex = this.nextSampleIndex;
         this.machine.instruments.forEach((instrument) => {
-          let instrumentPlayer = this.instrumentPlayers[instrument.id];
-          if (!instrumentPlayer) {
-            instrumentPlayer = new InstrumentPlayer(context, instrument);
-            observe(instrument, 'activeProgram', () => this.rescheduleInstrument(instrument));
-            this.instrumentPlayers[instrument.id] = instrumentPlayer;
-          }
-          this.instrumentNotes(instrument, beatIndex).forEach((note) => {
-            this.mixer.play(note.sampleName, instrumentPlayer, (beatIndex + note.beatOffset) * beatTime, note.velocity);
+          const instrumentPlayer = this.getInstrumentPlayer(context, instrument);
+          this.instrumentNotes(instrument, sampleIndex).forEach((note) => {
+            this.mixer.play(
+              note.sampleName,
+              instrumentPlayer,
+              sampleIndex * sampleTime - this.audioTimeDelta,
+              note.velocity,
+            );
           });
         });
-        this.nextBeatIndex++;
+        this.nextSampleIndex++;
       }
     } else {
       console.log('Mixer not ready yet');
@@ -96,40 +130,36 @@ export class BeatEngine {
     this.interval = window.setTimeout(() => this.scheduleBuffers(), 1000);
   }
 
-  rescheduleInstrument(instrument: IInstrument) {
-    const player = this.instrumentPlayers[instrument.id];
+  rescheduleInstrument(instrument: IInstrument, player: InstrumentPlayer) {
     player.reset();
-    const beatTime = this.beatTime;
-    for (let beatIndex = Math.round(this.getBeatIndex()); beatIndex < this.nextBeatIndex; beatIndex++) {
-      this.instrumentNotes(instrument, beatIndex).forEach((note) => {
-        this.mixer.play(note.sampleName, player, (beatIndex + note.beatOffset) * beatTime, note.velocity);
+    const sampleTime = this.beatTime / 2;
+    for (let sampleIndex = Math.ceil(this.getBeatIndex() * 2); sampleIndex < this.nextSampleIndex; sampleIndex++) {
+      this.instrumentNotes(instrument, sampleIndex).forEach((note) => {
+        this.mixer.play(note.sampleName, player, sampleIndex * sampleTime - this.audioTimeDelta, note.velocity);
       });
     }
   }
 
-  private instrumentNotes(instrument: IInstrument, beatIndex: number): IInstrumentSample[] {
+  private instrumentNotes(instrument: IInstrument, sampleIndex: number): IInstrumentSample[] {
     const result: IInstrumentSample[] = [];
     if (instrument.enabled) {
       const program = instrument.programs[instrument.activeProgram];
-      beatIndex = beatIndex % (program.length / 2);
+      sampleIndex %= program.length;
       program.notes
-        .filter((note) => note.index === beatIndex * 2 || note.index === beatIndex * 2 + 1)
+        .filter((note) => note.index === sampleIndex)
         .forEach((note) => {
           let pitch = note.pitch;
-          const beatOffset = note.index === beatIndex * 2 ? 0 : 0.5;
           if (instrument.keyedInstrument) {
             pitch += this.machine.keyNote;
           }
           if (note.hand !== 'left') {
             result.push({
               sampleName: instrument.id + '-' + (pitch + instrument.pitchOffset),
-              beatOffset,
               velocity: note.velocity,
             });
             if (note.pianoTonic) {
               result.push({
                 sampleName: instrument.id + '-' + (pitch + instrument.pitchOffset + 12),
-                beatOffset,
                 velocity: note.velocity,
               });
             }
@@ -137,7 +167,6 @@ export class BeatEngine {
           if (instrument.playBothHands && note.hand !== 'right') {
             result.push({
               sampleName: instrument.id + '-' + (pitch + instrument.leftHandPitchOffset),
-              beatOffset,
               velocity: note.velocity,
             });
           }
@@ -146,10 +175,10 @@ export class BeatEngine {
     return result;
   }
 
-  private stopAllInstruments() {
-    Object.keys(this.instrumentPlayers).forEach((key) => {
-      this.instrumentPlayers[key].reset();
-    });
+  private stopAllInstruments(hard = false) {
+    for (const instrument of Array.from(this.instrumentPlayers.values())) {
+      instrument.reset(hard);
+    }
   }
 
   public stop() {
@@ -161,9 +190,10 @@ export class BeatEngine {
       cancelAnimationFrame(this.animationFrameRequest);
       this.animationFrameRequest = null;
     }
-    this.stopAllInstruments();
+    this.stopAllInstruments(true);
     this.mixer.reset();
-    this.nextBeatIndex = 0;
+    this.audioTimeDelta = 0;
+    this.nextSampleIndex = 0;
   }
 
   @computed
@@ -177,11 +207,7 @@ export class BeatEngine {
   }
 
   public getBeatIndex() {
-    return this.mixer.getCurrentTime() / this.beatTime;
-  }
-
-  private timeToNextBeat() {
-    return this.mixer.getCurrentTime() % this.beatTime;
+    return (this.mixer.getCurrentTime() + this.audioTimeDelta) / this.beatTime;
   }
 
   private beatTick() {
