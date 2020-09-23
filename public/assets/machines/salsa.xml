@@ -1,6 +1,5 @@
 ﻿<bm:Machine xmlns="http://www.salsabeatmachine.org/xns/bm"
 			xmlns:bm="http://www.salsabeatmachine.org/xns/bm">
-	<!-- $Id: salsa.xml 7346 2012-01-06 00:16:47Z uri $ -->
 
 	<bm:instrumentList>
 		<Clave xmlns="http://www.salsabeatmachine.org/xns/instruments"
@@ -55,20 +54,20 @@
 					<bm:Note index="0" pitch="0" />
 					<bm:Note index="2" pitch="0" />
 				</bm:Program>
-        <bm:Program length="4" title="Caballo">
-          <bm:Note index='2' pitch='0' velocity='0.4' />
-          <bm:Note index='3' pitch='0' velocity='0.4' />
-        </bm:Program>
-        <bm:Program length="16" title="Caballo Complex">
-          <bm:Note index='2' pitch='0' velocity='0.4' />
-          <bm:Note index='3' pitch='0' velocity='0.4' />
-          <bm:Note index='6' pitch='0' velocity='0.4' />
-          <bm:Note index='7' pitch='0' velocity='0.4' />
-          <bm:Note index='10' pitch='0' velocity='0.4' />
-          <bm:Note index='11' pitch='0' velocity='0.4' />
-          <bm:Note index='13' pitch='0' />
-          <bm:Note index='15' pitch='0' />
-        </bm:Program>
+				<bm:Program length="4" title="Caballo">
+					<bm:Note index='2' pitch='0' velocity='0.4' />
+					<bm:Note index='3' pitch='0' velocity='0.4' />
+				</bm:Program>
+				<bm:Program length="16" title="Caballo Complex">
+					<bm:Note index='2' pitch='0' velocity='0.4' />
+					<bm:Note index='3' pitch='0' velocity='0.4' />
+					<bm:Note index='6' pitch='0' velocity='0.4' />
+					<bm:Note index='7' pitch='0' velocity='0.4' />
+					<bm:Note index='10' pitch='0' velocity='0.4' />
+					<bm:Note index='11' pitch='0' velocity='0.4' />
+					<bm:Note index='13' pitch='0' />
+					<bm:Note index='15' pitch='0' />
+				</bm:Program>
 			</programs>
 		</Cowbell>
 
@@ -169,14 +168,14 @@
 					<bm:Note index='14' pitch='4' />
 					<bm:Note index='15' pitch='2' velocity="0.8" />
 				</bm:Program>
-        <bm:Program title="Caballo Simple" length='8'>
-          <bm:Note index='0' pitch='2' />
-          <bm:Note index='3' pitch='0' velocity="0.6" />
-          <bm:Note index='4' pitch='2' />
-          <bm:Note index='6' pitch='3' />
-          <bm:Note index='7' pitch='0' velocity="0.6" />
-        </bm:Program>
-        <bm:Program title="Caballo with Rellenos" length="8">
+				<bm:Program title="Caballo Simple" length='8'>
+					<bm:Note index='0' pitch='2' />
+					<bm:Note index='3' pitch='0' velocity="0.6" />
+					<bm:Note index='4' pitch='2' />
+					<bm:Note index='6' pitch='3' />
+					<bm:Note index='7' pitch='0' velocity="0.6" />
+				</bm:Program>
+				<bm:Program title="Caballo with Rellenos" length="8">
 					<bm:Note index='0' pitch='2' />
 					<bm:Note index='1' pitch='1' velocity="0.6" />
 					<bm:Note index='2' pitch='1' velocity="0.6" />
@@ -960,7 +959,7 @@
 					<bm:Note index='11' pitch='7' length='2' />
 					<bm:Note index='14' pitch='2' length='4 '/>
 				</bm:Program>
-        <bm:Program title="i-iv" length='16'>
+      			<bm:Program title="i-iv" length='16'>
 			  	<!-- added to match a piano pattern -->
 					<bm:Note index='3' pitch='8' length='128' />
 					<bm:Note index='6' pitch='7' length='4' />
@@ -1007,7 +1006,7 @@
 					<bm:Note index = '27' pitch='9' />
 					<bm:Note index = '30' pitch='7' />
 				</bm:Program>
-        <bm:Program title="I-IV-ii-V" length='16'>
+				<bm:Program title="I-IV-ii-V" length='16'>
 				<!-- added to match a piano pattern -->
 					<bm:Note index='3' pitch='5' length='4' />
 					<bm:Note index='6' pitch='2' length='4' />
@@ -1076,17 +1075,17 @@
 					<bm:Note index='27' pitch='10' length='2' />
 					<bm:Note index='30' pitch='0' length='4' />
 				</bm:Program>
-        <bm:Program title="Abre Que Voy" length='32'>
-        <!-- added to match a piano pattern -->
-          <bm:Note index='3' pitch='7' length='8' />
-          <bm:Note index='6' pitch='8' length='4' />
-          <bm:Note index='11' pitch='5' length='2' />
-          <bm:Note index='14' pitch='10' length='4 '/>
-          <bm:Note index='19' pitch='7' length='8' />
-          <bm:Note index='22' pitch='12' length='4' />
-          <bm:Note index='27' pitch='7' length='2' />
-          <bm:Note index='30' pitch='12' length='4 '/>
-        </bm:Program>
+				<bm:Program title="Abre Que Voy" length='32'>
+				<!-- added to match a piano pattern -->
+					<bm:Note index='3' pitch='7' length='8' />
+					<bm:Note index='6' pitch='8' length='4' />
+					<bm:Note index='11' pitch='5' length='2' />
+					<bm:Note index='14' pitch='10' length='4 '/>
+					<bm:Note index='19' pitch='7' length='8' />
+					<bm:Note index='22' pitch='12' length='4' />
+					<bm:Note index='27' pitch='7' length='2' />
+					<bm:Note index='30' pitch='12' length='4 '/>
+				</bm:Program>
 				<bm:Program title="El Preso" length='32'>
 					<bm:Note index='2' pitch='-1' hand="left" />
 					<bm:Note index='4' pitch='2' hand="left" />
