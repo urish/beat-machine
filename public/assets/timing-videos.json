@@ -1,0 +1,126 @@
+{
+  "generation": { "updated": "2011-10-05 08:42:07", "number": 7 },
+  "data": [
+    {
+      "last_updated": "2011-06-07 21:26:51",
+      "artist": "Cheo Feliciano",
+      "generation": 6,
+      "title": "Cheo Feliciano - Felicidades",
+      "track_name": "Felicidades",
+      "publish_date": "2011-01-04 23:31:23",
+      "youtube_id": "4gPN1PTmfos",
+      "thumbnail_url": "http://i.ytimg.com/vi/4gPN1PTmfos/0.jpg",
+      "id": 35005
+    },
+    {
+      "last_updated": "2011-06-23 18:51:43",
+      "artist": "Tito Puente",
+      "generation": 6,
+      "title": "Tito Puente - Hong Kong Mambo",
+      "track_name": "Hong Kong Mambo",
+      "publish_date": "2011-05-07 18:31:05",
+      "youtube_id": "fpcz9peCYgg",
+      "thumbnail_url": "http://i.ytimg.com/vi/fpcz9peCYgg/0.jpg",
+      "id": 37003
+    },
+    {
+      "last_updated": "2011-06-28 15:25:42",
+      "artist": "Luis Enrique",
+      "generation": 6,
+      "title": "Yo No Se Ma\u00f1ana",
+      "track_name": "Yo No Se Ma\u00f1ana",
+      "publish_date": "2010-10-23 00:32:24",
+      "youtube_id": "8bV55Q0UTMg",
+      "thumbnail_url": "http://i.ytimg.com/vi/8bV55Q0UTMg/0.jpg",
+      "id": 37004
+    },
+    {
+      "last_updated": "2011-06-21 19:37:27",
+      "artist": "Original De Manzanillo",
+      "generation": 6,
+      "title": "Uno Llega Y Otro Se Va",
+      "track_name": "Uno Llega Y Otro Se Va",
+      "publish_date": "2010-12-27 23:41:04",
+      "youtube_id": "R94dIWlRfgg",
+      "thumbnail_url": "http://i.ytimg.com/vi/R94dIWlRfgg/0.jpg",
+      "id": 38003
+    },
+    {
+      "last_updated": "2011-06-25 00:01:34",
+      "artist": "Joe Arroyo",
+      "generation": 6,
+      "title": "Joe Arroyo - La Rebelion",
+      "track_name": "La Rebelion",
+      "publish_date": "2010-12-19 01:53:24",
+      "youtube_id": "-d2jdSKOfLA",
+      "thumbnail_url": "http://i.ytimg.com/vi/-d2jdSKOfLA/0.jpg",
+      "id": 38004
+    },
+    {
+      "last_updated": "2011-06-23 08:20:58",
+      "artist": "LA 33",
+      "generation": 6,
+      "title": "LA33 - La Pantera Mambo",
+      "track_name": "La Pantera Mambo",
+      "publish_date": "2010-09-14 00:04:14",
+      "youtube_id": "U0oC8h_1ehQ",
+      "thumbnail_url": "http://i.ytimg.com/vi/U0oC8h_1ehQ/0.jpg",
+      "id": 39004
+    },
+    {
+      "last_updated": "2011-06-18 20:33:33",
+      "artist": "Miguel Enriquez",
+      "generation": 6,
+      "title": "Miguel Enriquez - Abre Que Voy",
+      "track_name": "Abre Que Voy",
+      "publish_date": "2010-08-21 22:32:52",
+      "youtube_id": "DN_u2BVc9u0",
+      "thumbnail_url": "http://i.ytimg.com/vi/DN_u2BVc9u0/0.jpg",
+      "id": 39005
+    },
+    {
+      "last_updated": "2011-06-21 00:23:49",
+      "artist": "Ismael Rivera",
+      "generation": 6,
+      "title": "Ismael Rivera - Bomba De Navidad",
+      "track_name": "Bomba De Navidad",
+      "publish_date": "2010-12-25 02:07:11",
+      "youtube_id": "6ZnhwjzMoQE",
+      "thumbnail_url": "http://i.ytimg.com/vi/6ZnhwjzMoQE/0.jpg",
+      "id": 40003
+    },
+    {
+      "last_updated": "2011-06-28 03:42:47",
+      "artist": "Grupo Latin Vibe",
+      "generation": 6,
+      "title": "Grupo Latin Vibe - La LLave",
+      "track_name": "La Llave",
+      "publish_date": "2011-01-29 12:00:31",
+      "youtube_id": "a0Rl2YJ-jxY",
+      "thumbnail_url": "http://i.ytimg.com/vi/a0Rl2YJ-jxY/0.jpg",
+      "id": 42001
+    },
+    {
+      "last_updated": "2011-06-25 07:10:54",
+      "artist": "Wayne Gorbea",
+      "generation": 6,
+      "title": "Wayne Gorbea - Cogele El Gusto",
+      "track_name": "Cogele El Gusto",
+      "publish_date": "2010-11-30 07:06:52",
+      "youtube_id": "M-qaWk0VJ0I",
+      "thumbnail_url": "http://i.ytimg.com/vi/M-qaWk0VJ0I/0.jpg",
+      "id": 43001
+    },
+    {
+      "last_updated": "2011-10-05 10:39:00",
+      "artist": "Sama Y El Expreso De Oriente",
+      "generation": 7,
+      "title": "Sama - El Repartero De La Habana",
+      "track_name": "El Repartero De La Habana",
+      "publish_date": "2011-10-05 10:39:00",
+      "youtube_id": "a-MuJHX75f0",
+      "thumbnail_url": "http://i.ytimg.com/vi/a-MuJHX75f0/0.jpg",
+      "id": 82001
+    }
+  ]
+}
