@@ -14,13 +14,20 @@ export default function Home({ machines }: IHomeProps) {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <title>The Salsa Beat Machine</title>
+        <title>The Salsa Beat Machine 🎼🎹</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet" />
         <link rel="manifest" href="manifest.json" />
         <meta name="theme-color" content="#1976d2" />
+        <meta
+          name="description"
+          content="Explore Salsa music with an interactive rhythm machine. Practice Salsa timing and train your ears. Combine and arrange instruments to create different salsa tunes."
+        />
+        <meta property="og:title" content="The Salsa Beat Machine" />
+        <meta property="og:description" content="Explore Salsa music with an interactive rhythm machine. Practice Salsa timing and train your ears. Combine and arrange instruments to create different salsa tunes." />
+        <meta property="og:url" content="https://www.salsabeatmachine.org/" />
       </Head>
 
       <div className={styles.homepage}>
