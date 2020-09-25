@@ -1,10 +1,13 @@
-# Salsa Beat Machine 5
+# The Salsa Beat Machine 🎼🎹🥁
 
-HTML-5 based version of the [Salsa Beat Machine](http://www.salsabeatmachine.org/). 
+Combine and arrange musical instruments to create different Salsa tunes. Great for musicians and dancers who want
+to practive their Salsa timing and trains their ears.
+
+▶ Check out the [online version](https://www.salsabeatmachine.org/)
+
+▶ Get the [Android App](https://play.google.com/store/apps/details?id=com.salsarhythm&hl=en)
 
 Built with [Next.js](https://nextjs.org/).
-
--> Check out the [online version](https://www.salsabeatmachine.org/)
 
 ## Local development
 
