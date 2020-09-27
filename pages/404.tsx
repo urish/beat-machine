@@ -22,7 +22,6 @@ export default function Error404() {
           property="og:description"
           content="Explore Salsa music with an interactive rhythm machine. Practice Salsa timing and train your ears. Combine and arrange instruments to create different salsa tunes."
         />
-        <meta property="og:url" content="https://www.salsabeatmachine.org/" />
         <meta property="og:image" content="https://www.salsabeatmachine.org/assets/images/salsabeatmachine-cover.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
