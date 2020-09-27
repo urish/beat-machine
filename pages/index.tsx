@@ -32,6 +32,9 @@ export default function Home({ machines }: IHomeProps) {
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@UriShaked" />
+        <meta name="twitter:site" content="@SalsaRhythm" />
       </Head>
 
       <div className={styles.homepage}>
