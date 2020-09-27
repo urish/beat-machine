@@ -1,0 +1,26 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.page h1 {
+  font-size: 48px;
+  color: #aaa;
+  font-family: 'Merriweather', serif;
+  font-weight: normal;
+}
+
+.page a {
+  text-decoration: none;
+  font-size: 32px;
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .page h1 {
+    font-size: 6vw;
+  }
+}
