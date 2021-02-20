@@ -139,6 +139,18 @@
 					<bm:Note index='14' pitch='4' />
 					<bm:Note index='15' pitch='4' />
 				</bm:Program>
+
+				<bm:Program title="Bolero" length='8'>
+					<bm:Note index='0' pitch='0' velocity="0.6" />
+					<bm:Note index='1' pitch='1' velocity="0.6" />
+					<bm:Note index='2' pitch='2' />
+					<bm:Note index='3' pitch='1' velocity="0.6" />
+					<bm:Note index='4' pitch='0' velocity="0.6" />
+					<bm:Note index='5' pitch='3' />
+					<bm:Note index='6' pitch='3' />
+					<bm:Note index='7' pitch='3' />
+				</bm:Program>
+
 				<bm:Program title="Simple Guaguancó" length='16'>
 					<bm:Note index='0' pitch='3' />
 					<bm:Note index='3' pitch='3' />
